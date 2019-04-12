@@ -3,6 +3,7 @@ import Logo from './Logo';
 
 
 
+
 class Canvas extends Component{
     constructor(){
         super();
@@ -22,8 +23,9 @@ class Canvas extends Component{
         });
     };
     render(){
-        const viewBox = [0, 0, window.innerWidth, window.innerHeight];
+        const viewBox = [0, 0, window.innerWidth, (window.innerHeight-126)];
         return(
+           
             <svg
             width={this.width}
             height={this.height}
@@ -32,7 +34,10 @@ class Canvas extends Component{
             viewBox={viewBox}
             >
             <Logo/>
+            
             </svg>
+            
+            
         );
     };
 }

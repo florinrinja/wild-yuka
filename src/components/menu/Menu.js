@@ -7,7 +7,7 @@ import ButtonTeam from '../menu/buttonTeam/ButtonTeam';
 const Menu = () => {
 
 	return (
-		<div>
+		<div sty>
 		<ButtonHistory/>
 		<ButtonTeam/>
 		</div>

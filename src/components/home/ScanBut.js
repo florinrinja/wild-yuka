@@ -12,7 +12,8 @@ const ScanBut = () => {
     const styleParent = {
       display: 'flex',
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
+      backgroundColor:'#fffaf2'
     };
 
     const styleChild = {

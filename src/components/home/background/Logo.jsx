@@ -1,6 +1,7 @@
 import React from 'react'; 
 import Background from './untitled.svg';
 
+
 const Logo =()=> {
 
     // const logoStyle ={
@@ -49,6 +50,7 @@ const Logo =()=> {
                     “Je mange <br/>
                     donc je suis...”
                 </text>
+                
         </g>
     );
 };

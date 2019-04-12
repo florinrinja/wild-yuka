@@ -13,8 +13,17 @@ class App extends Component {
   render() {
     return (
       <div>
+      
+      
+      
+      
       <Home/>
-			<Menu/>
+			
+      
+      
+      
+      
+      <Menu/>
       </div>
       )
   }
