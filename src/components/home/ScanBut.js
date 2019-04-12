@@ -7,11 +7,12 @@ const ScanBut = () => {
 
   const [scanner, getScan] = useState(false);
 
-  const styleParent = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
-  };
+    const styleParent = {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor:'#fffaf2'
+    };
 
   const styleChild = {
     width: 140,
