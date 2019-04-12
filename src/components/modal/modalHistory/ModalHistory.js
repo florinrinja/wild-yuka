@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Button, Modal} from 'react-materialize';
+import ButtonHistory from '../../menu/buttonHistory/ButtonHistory'
 
 
 class ModalHistory extends Component {

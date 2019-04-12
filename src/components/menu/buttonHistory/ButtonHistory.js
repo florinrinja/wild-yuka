@@ -18,7 +18,7 @@ const ButtonHistory = () => {
                 large
                 waves="light"
 								onClick={() => setModal(!modal)}
-								style={{right: '23px'}}
+                style={{right: '23px'}}
             ></Button>
     		</div>
 		</div>
