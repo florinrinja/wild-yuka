@@ -4,6 +4,8 @@ import './App.css';
 import '../node_modules/materialize-css/dist/css/materialize.min.css'
 import M from '../node_modules/materialize-css/dist/js/materialize.js';
 import Menu from './components/menu/Menu';
+import Scan from './components/scan/Scan';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -35,8 +37,15 @@ class App extends Component {
 
     return (
       <div style={style}>
-        <Home />
-        <Menu />
+        {/* <Home />
+        <Menu />  */}
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/Scan" component={Scan}/>
+          <Route component={Error}/>
+        </Switch>
+      </BrowserRouter>
       </div>
     )
   }
