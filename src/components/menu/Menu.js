@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ButtonHistory from '../menu/buttonHistory/ButtonHistory';
 import ButtonTeam from '../menu/buttonTeam/ButtonTeam';
 
 const Menu = () => {
 	const style = {
-		backgroundColor: '#3FAF2'
+		backgroundColor: '#fffaf2',
+		height: (window.innerHeight-(window.innerHeight*0.7)-74.98)
 	}
+
 	return (
 		<div style={style}>
 			<ButtonHistory />

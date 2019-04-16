@@ -6,12 +6,37 @@ import M from '../node_modules/materialize-css/dist/js/materialize.js';
 import Menu from './components/menu/Menu';
 
 class App extends Component {
-  
+  constructor() {
+    super();
+    this.state = {
+      height: 0,
+      width: 0
+    };
+    window.addEventListener("resize", this.update);
+  }
+
+  componentDidMount() {
+    this.update();
+  }
+
+  update = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth
+    });
+  };
+
   render() {
+
+    const style = {
+      backgroundColor: '#fffaf2',
+      height: this.height
+    };
+
     return (
-      <div>
-        <Home/>
-        <Menu/>
+      <div style={style}>
+        <Home />
+        <Menu />
       </div>
     )
   }

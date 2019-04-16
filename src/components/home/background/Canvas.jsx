@@ -23,7 +23,7 @@ class Canvas extends Component {
 	};
 
 	render() {
-		const viewBox = [0, 0, window.innerWidth, (window.innerHeight - 126)];
+		const viewBox = [0, 0, window.innerWidth, (window.innerHeight - (window.innerHeight*0.3))];
 		return (
 			<svg
 				width={this.width}

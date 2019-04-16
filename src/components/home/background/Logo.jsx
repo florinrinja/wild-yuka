@@ -1,5 +1,5 @@
 import React from 'react';
-import Background from './untitled.svg';
+import Background from '../images/untitled.svg';
 
 const Logo = () => {
 
@@ -29,7 +29,7 @@ const Logo = () => {
         <foreignObject
           className=""
           x={(window.innerWidth - 150) / 2}
-          y={(window.innerHeight - 500) / 2}
+          y={(window.innerHeight - (window.innerHeight/3)) / 7}
           width="150"
           fill="#ff2400"
           height="150"
@@ -39,7 +39,7 @@ const Logo = () => {
       </g>
       <text
         x="50%"
-        y="50%"
+        y="82%"
         text-anchor="middle"
         fill="#6FCF97"
         font-size="1.5rem"
