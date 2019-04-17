@@ -30,9 +30,9 @@ const Logo = () => {
           className=""
           x={(window.innerWidth - 150) / 2}
           y={(window.innerHeight - (window.innerHeight/3)) / 7}
-          width="150"
+          width="150px"
           fill="#ff2400"
-          height="150"
+          height="150px"
           style={logoImageStyle}
         >
         </foreignObject>
