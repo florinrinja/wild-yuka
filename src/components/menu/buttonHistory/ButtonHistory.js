@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Modal } from 'react-materialize';
+import './ButtonHistory.css'
 
 const ButtonHistory = () => {
 
