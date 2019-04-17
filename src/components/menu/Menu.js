@@ -5,13 +5,13 @@ import ButtonTeam from '../menu/buttonTeam/ButtonTeam';
 const Menu = () => {
 	const style = {
 		backgroundColor: '#fffaf2',
-		height: (window.innerHeight-(window.innerHeight*0.7)-74.98)
+		height: (window.innerHeight - (window.innerHeight * 0.7) - 74.98)
 	}
 
 	return (
 		<div style={style}>
-			<ButtonHistory />
 			<ButtonTeam />
+			<ButtonHistory />
 		</div>
 	)
 }
