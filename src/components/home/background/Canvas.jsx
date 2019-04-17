@@ -28,7 +28,7 @@ class Canvas extends Component {
 			<svg
 				width={this.width}
 				height={this.height}
-				preserveAspectRatio="xMidYmin meet"
+				preserveAspectRatio="xMidYMin meet"
 				id="background"
 				viewBox={viewBox}
 			>
