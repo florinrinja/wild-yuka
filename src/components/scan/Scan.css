@@ -1,0 +1,8 @@
+
+.drawingBuffer{
+    display:none;
+}
+#interactive{
+    display:flex;
+    justify-content:center;
+}
