@@ -1,7 +1,6 @@
 import React from 'react';
 import ButtonHistory from '../menu/buttonHistory/ButtonHistory';
 import ButtonTeam from '../menu/buttonTeam/ButtonTeam';
-import ModalProduct from '../modal/modalProduct/ModalProduct';
 
 const Menu = () => {
 	const style = {
@@ -13,7 +12,6 @@ const Menu = () => {
 		<div style={style}>
 			<ButtonTeam />
 			<ButtonHistory />
-			<ModalProduct />
 		</div>
 	)
 }
