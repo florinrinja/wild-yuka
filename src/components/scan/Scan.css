@@ -3,3 +3,12 @@
     width: 50%; 
     margin: auto; 
 }
+
+.drawingBuffer{
+    display:none;
+}
+
+#interactive{
+    display:flex;
+    justify-content:center;
+}

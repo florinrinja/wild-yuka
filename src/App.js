@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import '../node_modules/materialize-css/dist/css/materialize.min.css';
 import M from '../node_modules/materialize-css/dist/js/materialize.js';
-import Home from '../src/components/home/Home'
+import Home from '../src/components/home/Home';
 import Scan from './components/scan/Scan';
 import './App.css';
 
