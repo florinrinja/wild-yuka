@@ -20,6 +20,7 @@ class Canvas extends Component {
 			height: window.innerHeight,
 			width: window.innerWidth
 		});
+		// console.log(this.state.width)
 	};
 
 	render() {

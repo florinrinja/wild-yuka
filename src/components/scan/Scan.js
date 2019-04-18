@@ -3,17 +3,22 @@ import { Link } from 'react-router-dom';
 import Quagga from 'quagga';
 import PopupCam from '../home/PopupCam';
 import Menu from '../menu/Menu';
+import './Scan.css'
 
 export default class Scan extends Component {
 	constructor(props) {
 		super(props);
 		this._onDetected = this._onDetected.bind(this);
+		this.update=this.update.bind(this);
 		this.state = {
-			popup: false
+			popup: false,
+			height: 0,
+			width: 0
 		}
 	}
 
 	componentDidMount() {
+		
 		const openPopup = () => {
 			this.setState({ popup: !this.state.popup })
 		};
@@ -22,8 +27,8 @@ export default class Scan extends Component {
 				inputStream: {
 					type: 'LiveStream',
 					constraints: {
-						width: window.innerWidth,
-						height: window.innerHeight,
+						width: 640,
+						height: 480,
 						facingMode: 'environment', // or user
 					},
 				},
@@ -35,7 +40,7 @@ export default class Scan extends Component {
 				decoder: {
 					readers: ['ean_reader', 'ean_8_reader'],
 					debug: {
-						drawBoundingBox: true,
+						drawBoundingBox: false,
 						showFrequency: false,
 						drawScanline: false,
 						showPattern: false
@@ -50,14 +55,31 @@ export default class Scan extends Component {
 				}
 				if (!err) {
 					Quagga.start();
+					
 				}
 			}
 		);
+		this.update();
 		Quagga.onDetected(this._onDetected);
+
+		Quagga.onProcessed(result => {
+			const drawingCanvas = Quagga.canvas.dom.overlay;
+			drawingCanvas.style.display = 'none';
+		});
 	}
 
+	update (){
+		this.setState({
+			height: window.innerHeight,
+			width: window.innerWidth
+		});
+		
+	};
+	
 	componentWillUnmount() {
 		Quagga.offDetected(this._onDetected);
+
+		
 	}
 
 	_onDetected(result) {
@@ -67,8 +89,15 @@ export default class Scan extends Component {
 
 	render() {
 		return (
-			<div style={{ maxHeight: window.innerHeight }}>
-				{this.state.popup ? <Link to="/" exact><PopupCam /></Link> : <div><div id="interactive" className="viewport"></div><Menu /></div>}
+			<div >
+				{
+					this.state.popup ? <Link to="/" exact><PopupCam /></Link> :
+						<div>
+							<div id="interactive" className="viewport">
+							</div>
+							<Menu />
+						</div>
+				}
 			</div>
 		)
 	}
