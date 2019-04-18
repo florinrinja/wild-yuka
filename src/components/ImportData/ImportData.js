@@ -7,7 +7,7 @@ class ImportData extends Component {
   constructor (props) {
   super (props);
   this.state = {
-    codeBarre : this.props.result,
+    // codeBarre : this.props.result,
     image :'',
     product_name : '',      
     // nutriscore :' ',  
@@ -27,7 +27,7 @@ class ImportData extends Component {
   }
 
 getData = () => {
-    fetch(`${openFood}${this.state.codeBarre}.json`)
+    fetch(`${openFood}${this.props.result}.json`)
     .then(response  =>  response.json())
     .then(response  => {
           this.setState({
@@ -54,6 +54,7 @@ render () {
     <div>
       <img src={this.state.image} alt="produit affiché"/>
       <p>
+        code : {this.props.result}
       nom : {this.state.product_name}
       </p>
       <p>
