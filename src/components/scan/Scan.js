@@ -5,6 +5,7 @@ import PopupCam from '../home/PopupCam';
 import Menu from '../menu/Menu';
 import ImportData from '../../components/ImportData/ImportData';
 import './Scan.css';
+import ModalProduct from '../modal/modalProduct/ModalProduct'
 
 export default class Scan extends Component {
 	constructor(props) {
@@ -14,7 +15,7 @@ export default class Scan extends Component {
 			productName:'',
 			productImage:'',
 			popup: false,
-			// isScan:false
+			isScan:false
 		}
 	}
 
@@ -34,8 +35,8 @@ export default class Scan extends Component {
 						},
 					},
 					locator: {
-						patchSize: 'medium',
-						halfSample: true,
+						patchSize: 'small',
+						halfSample: false,
 					},
 					numOfWorkers: 0,
 					decoder: {
@@ -81,17 +82,18 @@ export default class Scan extends Component {
 	
 	_onDetected=(data)=> {
 		this.setState({code : data.codeResult.code});
+		console.log(this.state.code)
 		// console.log(this.state.code)
-		// this.setState({isScan: true})
+		this.setState({isScan: true})
 		Quagga.pause();
 	}
 	
 	render() {
 		return (
 			<div style={{ Height: window.innerHeight, witdh:window.innerWidth }}>
-			<ImportData result={this.state.code}/>
 				{/* {this.state.isScan ? <div><h1>{this.state.productName}</h1><img src={this.state.productImage}></img></div>:null} */}
 				{this.state.popup ? <Link to="/" exact><PopupCam /></Link> : <div><Menu /><div id="interactive" className="viewport"></div></div>}
+			{this.state.isScan?/*<ImportData result={this.state.code}/>*/<ModalProduct />:null}
 			</div>
 		)
 	}

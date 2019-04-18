@@ -20,7 +20,7 @@ class ModalProduct extends Component {
         <Modal 
           actions={
             <Button waves="yellow" modal="close" flat>Fermer</Button>
-          }
+          } 
           header="Fiche produit" 
           trigger={<Button 
             id='Team'
