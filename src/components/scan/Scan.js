@@ -76,6 +76,7 @@ export default class Scan extends Component {
 	// 		});
 
 	// }
+
 	componentWillUnmount() {
 		Quagga.offDetected(this._onDetected);
 	}
