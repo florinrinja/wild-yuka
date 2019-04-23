@@ -12,4 +12,4 @@ const ModalTeam = React.memo(function ModalTeam({ modTeam, modifTeam }) {
   );
 });
 
-export default ModalTeam;
+export default ModalTeam; 

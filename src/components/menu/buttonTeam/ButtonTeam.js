@@ -26,4 +26,4 @@ const ButtonTeam = () => {
   )
 }
 
-export default ButtonTeam;
+export default ButtonTeam; 
