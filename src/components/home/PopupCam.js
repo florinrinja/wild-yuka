@@ -18,4 +18,4 @@ export default class PopupCam extends Component {
 			</div>
 		)
 	}
-}
+} 

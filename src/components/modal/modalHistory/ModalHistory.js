@@ -14,4 +14,4 @@ const ModalHistory = React.memo(function ModalHistory({ modHist, modifHist }) {
   );
 });
 
-export default ModalHistory;
+export default ModalHistory; 

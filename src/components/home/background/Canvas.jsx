@@ -38,4 +38,4 @@ class Canvas extends Component {
   };
 }
 
-export default Canvas;
+export default Canvas; 
