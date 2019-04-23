@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import "../../../node_modules/materialize-css/dist/css/materialize.min.css";
 import { Modal, Button } from 'react-materialize';
 
-
 export default class PopupCam extends Component {
 
 	render() {
@@ -19,4 +18,4 @@ export default class PopupCam extends Component {
 			</div>
 		)
 	}
-}
+} 

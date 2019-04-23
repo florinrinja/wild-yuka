@@ -25,7 +25,6 @@ const Logo = () => {
 
   return (
     <svg xmlns="http://www.w3.org/2000/svg" className="" >
-
       <svg width="150" height="150" x={(window.innerWidth - 150) / 2} y={(window.innerHeight - (window.innerHeight / 3)) / 7}>
         <defs>
           <pattern id="imgpattern" width="1" height="1">
@@ -35,12 +34,9 @@ const Logo = () => {
             />
           </pattern>
         </defs>
-
         <path fill="url(#imgpattern)"
           d="M 0,0 L 0,0 0,150 150,150 150,0 Z" />
-
       </svg>
-
       <text
         x="50%"
         y="82%"
@@ -59,4 +55,4 @@ const Logo = () => {
   );
 };
 
-export default Logo;
+export default Logo;  

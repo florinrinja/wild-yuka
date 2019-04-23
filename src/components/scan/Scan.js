@@ -83,7 +83,7 @@ export default class Scan extends Component {
 	// 			this.setState({
 	// 				productImage:  response.product.image_front_url,
 	//         productName:		response.product.product_name,
-	//         additives:response.product.additives_original_tags
+	//         additives:response.product.additives_original_tags 
 	//       });
 	// 		});
 
