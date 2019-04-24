@@ -34,16 +34,18 @@ class ImportData extends Component {
         this.setState({
           image: response.product.image_front_url,
           product_name: response.product.product_name,
-          // nutrition_score: response.product.nutriments.nutrition-score-fr,
-          // novaGroup : response.product.nutriments.nova-group,
           carbohydrates: response.product.nutriments.carbohydrates,
-          sugar: response.product.nutriments.sugar,
+          energy: response.product.nutriments.energy_value,
+          sugar: response.product.nutriments.sugars,
+          protein: response.product.nutriments.proteins,
           fat: response.product.nutriments.fat,
-          // saturatedFat : response.product.nutriments.saturated-fat,
           salt: response.product.nutriments.salt,
           sodium: response.product.nutriments.sodium,
-          protein: response.product.nutriments.proteins,
-          energy: response.product.nutriments.energy,
+     
+         
+          // nutrition_score: response.product.nutriments.nutrition-score-fr,
+          // novaGroup : response.product.nutriments.nova-group,
+          // saturatedFat : response.product.nutriments.saturated-fat,
           // additives: response.product.additives,
           // vitamins: 
         });
@@ -53,8 +55,19 @@ class ImportData extends Component {
 
   render() {
     return (
-      <div>
-        {this.state.product_name !== '' ? <ModalProduct name={this.state.product_name}/> : null }
+        <div>
+        {this.state.product_name !== '' ? 
+        < ModalProduct 
+        name={this.state.product_name}
+        image={this.state.image} 
+        carbohydrates={this.state.carbohydrates} 
+        energy={this.state.energy}
+        sugar={this.state.sugar}
+        protein={this.state.protein}
+        
+        /> 
+        : null}
+
         {/* <img src={this.state.image} alt="produit affiché" />
         <p>
           code : {this.props.result}
@@ -80,7 +93,11 @@ class ImportData extends Component {
         </p>
         <p>
           calories : {this.state.energy}
+
         </p> */}
+
+
+
         {/* <p>
       additifs : {this.state.additives}
       </p> */}
@@ -88,6 +105,7 @@ class ImportData extends Component {
       </div>
     )
   }
-}
+};
+
 
 export default ImportData;

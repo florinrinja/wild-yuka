@@ -34,77 +34,67 @@ class ModalProduct extends Component {
           actions={
             <Button waves="yellow" modal="close" flat>Fermer</Button>
           }
-          header={<h4>Super fiche produit</h4>}
+          header={<h4>{this.props.name}</h4>}
           open
         >
-        <div>
-        </div>
           {/* <div>
             <img src={sampleProduct.image} alt="product picture" />
           </div> */}
+          <div>
+          <img src={this.props.image}/>
+          </div>
 
-                 
-          {/* <Table>
-            <thead>r
+          <Table >
+            <thead>
               <tr>
-                <th data-field="id">
+                <th>
                   Informations nutritionnelles
                 </th>
-                <th data-field="name">
-                  par portion
-                </th>
-                <th data-field="price">
+                <th>
                   pour 100 g
                 </th>
               </tr>
             </thead>
             <tbody>
+
               <tr>
                 <td>
-                  Énergie
+                  Énergie :
                 </td>
                 <td>
-                  {sampleProduct.energiePortion}
-                </td>
-                <td>
-                  {sampleProduct.energie}
+                  {this.props.energy}
                 </td>
               </tr>
+
               <tr>
                 <td>
-                  Glucides
+                  Glucides : 
                 </td>
                 <td>
-                  {sampleProduct.glucidesPortion}
-                </td>
-                <td>
-                  {sampleProduct.glucides}
+                  {this.props.carbohydrates}
                 </td>
               </tr>
+
               <tr>
                 <td>
-                  Lipides
+                  Sucres :
                 </td>
                 <td>
-                  {sampleProduct.graissesPortion}
-                </td>
-                <td>
-                  {sampleProduct.graisses}
+                  {this.props.sugar}
                 </td>
               </tr>
+
               <tr>
                 <td>
-                  Protéines
+                  Protéines :
                 </td>
                 <td>
-                  {sampleProduct.proteinesPortion}
-                </td>
-                <td>
-                  {sampleProduct.proteines}
+                  {this.props.protein}
                 </td>
               </tr>
+
             </tbody>
-          </Table> */}
+           </Table>
         </Modal>
       </div>
     )
