@@ -1,25 +1,32 @@
 import React, { Component } from 'react';
 import { Modal, Button, Table } from 'react-materialize';
 import './ModalProduct.css';
+import Context from "../../context/Context"
 
-const sampleProduct = {
-  name: "Gerblé biscuits lait chocolat",
-  energie: "462 kcal",
-  energiePortion: "56 kcal",
-  image: "https://www.gerble.fr/var/site/storage/images/_aliases/related/vitalite/biscuit-lait-chocolat/3556-30-fre-FR/Biscuit-lait-chocolat.png",
-  graisses: "22 g",
-  graissesPortion: "2,5",
-  glucides: "58 g",
-  glucidesPortion: "6,7 g",
-  fibres: "4,6 g",
-  fibresPortion: "0,6 g",
-  proteines: "11 g",
-  proteinesPortion: "1,3",
-  sel: "0,61 g",
-  selPortion: "0,08 g"
-}
+// const sampleProduct = {
+//   name: "Gerblé biscuits lait chocolat",
+//   energie: "462 kcal",
+//   energiePortion: "56 kcal",
+//   image: "https://www.gerble.fr/var/site/storage/images/_aliases/related/vitalite/biscuit-lait-chocolat/3556-30-fre-FR/Biscuit-lait-chocolat.png",
+//   graisses: "22 g",
+//   graissesPortion: "2,5",
+//   glucides: "58 g",
+//   glucidesPortion: "6,7 g",
+//   fibres: "4,6 g",
+//   fibresPortion: "0,6 g",
+//   proteines: "11 g",
+//   proteinesPortion: "1,3",
+//   sel: "0,61 g",
+//   selPortion: "0,08 g"
+// }
 
 class ModalProduct extends Component {
+  constructor(props) {
+    super(props);
+    console.log(props.name)
+  }
+
+              
   render() {
     return (
       <div>
@@ -27,18 +34,18 @@ class ModalProduct extends Component {
           actions={
             <Button waves="yellow" modal="close" flat>Fermer</Button>
           }
-          header={<h4>{sampleProduct.name} </h4>}
+          header={<h4>Super fiche produit</h4>}
           open
         >
-          <div>
+        <div>
+        </div>
+          {/* <div>
             <img src={sampleProduct.image} alt="product picture" />
-          </div>
-          <div>
-            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Nutri-score-C.svg/1920px-Nutri-score-C.svg.png' alt='Nutriscore'></img>
-            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/NOVA_group_1.svg/800px-NOVA_group_1.svg.png' alt='Novagroup'></img>
-          </div>
-          <Table>
-            <thead>
+          </div> */}
+
+                 
+          {/* <Table>
+            <thead>r
               <tr>
                 <th data-field="id">
                   Informations nutritionnelles
@@ -97,7 +104,7 @@ class ModalProduct extends Component {
                 </td>
               </tr>
             </tbody>
-          </Table>
+          </Table> */}
         </Modal>
       </div>
     )

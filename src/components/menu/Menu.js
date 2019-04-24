@@ -13,7 +13,6 @@ const Menu = () => {
 		<div style={style}>
 			<ButtonTeam />
 			<ButtonHistory />
-			<ModalProduct />
 		</div>
 	)
 }

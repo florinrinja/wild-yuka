@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ModalProduct from '../modal/modalProduct/ModalProduct';
 
 const openFood = 'https://fr.openfoodfacts.org/api/v0/produit/';
 // let codeBarre= '3175680011480';
@@ -46,13 +47,15 @@ class ImportData extends Component {
           // additives: response.product.additives,
           // vitamins: 
         });
+
       });
   }
 
   render() {
     return (
       <div>
-        <img src={this.state.image} alt="produit affiché" />
+        {this.state.product_name !== '' ? <ModalProduct name={this.state.product_name}/> : null }
+        {/* <img src={this.state.image} alt="produit affiché" />
         <p>
           code : {this.props.result}
           nom : {this.state.product_name}
@@ -77,10 +80,11 @@ class ImportData extends Component {
         </p>
         <p>
           calories : {this.state.energy}
-        </p>
+        </p> */}
         {/* <p>
       additifs : {this.state.additives}
       </p> */}
+
       </div>
     )
   }
