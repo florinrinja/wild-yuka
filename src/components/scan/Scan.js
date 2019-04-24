@@ -94,7 +94,7 @@ export default class Scan extends Component {
       <div style={{ Height: window.innerHeight, witdh: window.innerWidth }}>
         {/* {this.state.isScan ? <div><h1>{this.state.productName}</h1><img src={this.state.productImage}></img></div>:null} */}
         {this.state.popup ? <Link to="/" exact><PopupCam /></Link> : <div><Menu /><div id="interactive" className="viewport"></div></div>}
-        {this.state.isScan ?/*<ImportData result={this.state.code}/>*/ <ModalProduct /> : null}
+        {this.state.isScan ?<ImportData result={this.state.code}/>  : null}
       </div>
     )
   }

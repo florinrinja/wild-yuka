@@ -2,24 +2,29 @@ import React, { Component } from 'react';
 import { Modal, Button, Table } from 'react-materialize';
 import './ModalProduct.css';
 
-const sampleProduct = {
-  name: "Gerblé biscuits lait chocolat",
-  energie: "462 kcal",
-  energiePortion: "56 kcal",
-  image: "https://www.gerble.fr/var/site/storage/images/_aliases/related/vitalite/biscuit-lait-chocolat/3556-30-fre-FR/Biscuit-lait-chocolat.png",
-  graisses: "22 g",
-  graissesPortion: "2,5",
-  glucides: "58 g",
-  glucidesPortion: "6,7 g",
-  fibres: "4,6 g",
-  fibresPortion: "0,6 g",
-  proteines: "11 g",
-  proteinesPortion: "1,3",
-  sel: "0,61 g",
-  selPortion: "0,08 g"
-}
+// const sampleProduct = {
+//   name: "Gerblé biscuits lait chocolat",
+//   energie: "462 kcal",
+//   energiePortion: "56 kcal",
+//   image: "https://www.gerble.fr/var/site/storage/images/_aliases/related/vitalite/biscuit-lait-chocolat/3556-30-fre-FR/Biscuit-lait-chocolat.png",
+//   graisses: "22 g",
+//   graissesPortion: "2,5",
+//   glucides: "58 g",
+//   glucidesPortion: "6,7 g",
+//   fibres: "4,6 g",
+//   fibresPortion: "0,6 g",
+//   proteines: "11 g",
+//   proteinesPortion: "1,3",
+//   sel: "0,61 g",
+//   selPortion: "0,08 g"
+// }
 
 class ModalProduct extends Component {
+  constructor (props) {
+    super(props);
+    console.log(props.data);
+  } 
+  
   render() {
     return (
       <div>
@@ -27,77 +32,67 @@ class ModalProduct extends Component {
           actions={
             <Button waves="yellow" modal="close" flat>Fermer</Button>
           }
-          header={<h4>{sampleProduct.name} </h4>}
+          header={<h4>{this.props.name}</h4>}
           open
         >
-          <div>
+          {/* <div>
             <img src={sampleProduct.image} alt="product picture" />
-          </div>
+          </div> */}
           <div>
-            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Nutri-score-C.svg/1920px-Nutri-score-C.svg.png' alt='Nutriscore'></img>
-            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/NOVA_group_1.svg/800px-NOVA_group_1.svg.png' alt='Novagroup'></img>
+          <img src={this.props.image}/>
           </div>
-          <Table>
+
+          <Table >
             <thead>
               <tr>
-                <th data-field="id">
+                <th>
                   Informations nutritionnelles
                 </th>
-                <th data-field="name">
-                  par portion
-                </th>
-                <th data-field="price">
+                <th>
                   pour 100 g
                 </th>
               </tr>
             </thead>
             <tbody>
+
               <tr>
                 <td>
-                  Énergie
+                  Énergie :
                 </td>
                 <td>
-                  {sampleProduct.energiePortion}
-                </td>
-                <td>
-                  {sampleProduct.energie}
+                  {this.props.energy}
                 </td>
               </tr>
+
               <tr>
                 <td>
-                  Glucides
+                  Glucides : 
                 </td>
                 <td>
-                  {sampleProduct.glucidesPortion}
-                </td>
-                <td>
-                  {sampleProduct.glucides}
+                  {this.props.carbohydrates}
                 </td>
               </tr>
+
               <tr>
                 <td>
-                  Lipides
+                  Sucres :
                 </td>
                 <td>
-                  {sampleProduct.graissesPortion}
-                </td>
-                <td>
-                  {sampleProduct.graisses}
+                  {this.props.sugar}
                 </td>
               </tr>
+
               <tr>
                 <td>
-                  Protéines
+                  Protéines :
                 </td>
                 <td>
-                  {sampleProduct.proteinesPortion}
-                </td>
-                <td>
-                  {sampleProduct.proteines}
+                  {this.props.protein}
                 </td>
               </tr>
+
             </tbody>
-          </Table>
+           </Table>
         </Modal>
       </div>
     )
