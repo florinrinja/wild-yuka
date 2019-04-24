@@ -92,13 +92,21 @@ class ImportData extends Component {
         </p>
         <p>
           calories : {this.state.energy}
+<<<<<<< HEAD
         </p> */}
+=======
+        </p>
+>>>>>>> 2b2706a45214cc76e1f831b4a3b6d66c37ccfd18
         {/* <p>
       additifs : {this.state.additives}
       </p> */}
       </div>
     )
   }
+<<<<<<< HEAD
 };
+=======
+}
+>>>>>>> 2b2706a45214cc76e1f831b4a3b6d66c37ccfd18
 
 export default ImportData;
