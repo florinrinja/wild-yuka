@@ -20,9 +20,9 @@ class ImportData extends Component {
       salt: '',
       sodium: '',
       protein: '',
-      // additives:'',
+      additives:'',
       energy: '',
-      // vitamins:'',
+      vitamins:'',
     }
     this.getData();
   }
@@ -31,6 +31,7 @@ class ImportData extends Component {
     fetch(`${openFood}${this.props.result}.json`)
       .then(response => response.json())
       .then(response => {
+
         this.setState({
           image: response.product.image_front_url,
           product_name: response.product.product_name,
@@ -39,15 +40,11 @@ class ImportData extends Component {
           sugar: response.product.nutriments.sugars,
           protein: response.product.nutriments.proteins,
           fat: response.product.nutriments.fat,
-          salt: response.product.nutriments.salt,
-          sodium: response.product.nutriments.sodium,
-     
-         
-          // nutrition_score: response.product.nutriments.nutrition-score-fr,
-          // novaGroup : response.product.nutriments.nova-group,
-          // saturatedFat : response.product.nutriments.saturated-fat,
-          // additives: response.product.additives,
-          // vitamins: 
+          salt: response.product.nutriments.salt_100g,
+          sodium: response.product.nutriments.sodium_100g,
+          saturatedFat : response.product.nutriments['saturated-fat_value'],
+          additives: response.product.additives_tags,
+          vitamins: response.product.vitamins_tags,
         });
 
       });
@@ -64,48 +61,18 @@ class ImportData extends Component {
         energy={this.state.energy}
         sugar={this.state.sugar}
         protein={this.state.protein}
+        fat={this.state.fat}
+        saturatedFat={this.state.saturatedFat}
+        salt={this.state.salt}
+        sodium={this.state.sodium.toFixed(2)}
+        additives={this.state.additives}
         
         /> 
         : null}
-
-        {/* <img src={this.state.image} alt="produit affiché" />
-        <p>
-          code : {this.props.result}
-          nom : {this.state.product_name}
-        </p>
-        <p>
-          glucides : {this.state.carbohydrates}
-        </p>
-        <p>
-          sucre : {this.state.sugar}
-        </p>
-        <p>
-          graisses : {this.state.fat}
-        </p>
-        <p>
-          sel : {this.state.salt}
-        </p>
-        <p>
-          sodium : {this.state.sodium}
-        </p>
-        <p>
-          protéines : {this.state.protein}
-        </p>
-        <p>
-          calories : {this.state.energy}
-
-        </p> */}
-
-
-
-        {/* <p>
-      additifs : {this.state.additives}
-      </p> */}
 
       </div>
     )
   }
 };
-
 
 export default ImportData;
