@@ -93,7 +93,6 @@ class ModalProduct extends Component {
                   {this.props.fat}
                 </td>
               </tr>
-
               <tr>
                 <td>
                   Graisses saturées :
