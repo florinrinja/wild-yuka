@@ -8,104 +8,108 @@ class ImportData extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // codeBarre : this.props.result,
-      image: '',
       product_name: '',
-      // nutriscore :' ',  
-      // novaGroup:'',
+      image: '',
+      nutriscore :'',  
+      novaGroup:'',
+      energy: '',
       carbohydrates: '',
       sugar: '',
       fat: '',
       saturatedFat: '',
-      salt: '',
-      sodium: '',
       protein: '',
-      // additives:'',
-      energy: '',
-      // vitamins:'',
+      sodium: '',
+      salt: '',
+      additives:'',
+      vitamins:'',
     }
     this.getData();
   }
 
-  getData = () => {
-    fetch(`${openFood}${this.props.result}.json`)
-      .then(response => response.json())
-      .then(response => {
+getData = () => {
+  fetch(`${openFood}${this.props.result}.json`)
+    .then(response => response.json())
+    .then(response => {
         this.setState({
-          image: response.product.image_front_url,
-          product_name: response.product.product_name,
-          carbohydrates: response.product.nutriments.carbohydrates,
-          energy: response.product.nutriments.energy_value,
-          sugar: response.product.nutriments.sugars,
-          protein: response.product.nutriments.proteins,
-          fat: response.product.nutriments.fat,
-          salt: response.product.nutriments.salt,
-          sodium: response.product.nutriments.sodium,
-     
-         
-          // nutrition_score: response.product.nutriments.nutrition-score-fr,
-          // novaGroup : response.product.nutriments.nova-group,
-          // saturatedFat : response.product.nutriments.saturated-fat,
-          // additives: response.product.additives,
-          // vitamins: 
-        });
-
+        product_name: response.product.product_name,
+        image: response.product.image_front_url,
+        nutriscore: response.product.nutriments['nutrition-score-fr'],
+        novaGroup : response.product.nutriments['nova-group'],
+        energy: response.product.nutriments.energy_value,
+        carbohydrates: response.product.nutriments.carbohydrates,
+        sugar: response.product.nutriments.sugars,
+        fat: response.product.nutriments.fat,
+        saturatedFat : response.product.nutriments['saturated-fat'],
+        protein: response.product.nutriments.proteins,
+        sodium: response.product.nutriments.sodium,
+        salt: response.product.nutriments.salt,
+        additives: response.product.additives_tags,
+        // vitamins: response.products.vitamins,
       });
+    });
+}
+
+getNutriLogo = () => {
+let nutriLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/ScanEat/Logo_Nutriscore_NA.png';
+  if (this.state.nutriscore <= -1) {
+      nutriLogo = "https://upload.wikimedia.org/wikipedia/commons/7/7d/Nutri-score-A.svg";
+    }
+    else if (this.state.nutriscore >= 0 && this.state.nutriscore <= 2) {
+      nutriLogo = "https://upload.wikimedia.org/wikipedia/commons/4/4e/Nutri-score-B.svg";
+    }
+    else if (this.state.nutriscore >= 3 && this.state.nutriscore <= 10) {
+      nutriLogo = "https://upload.wikimedia.org/wikipedia/commons/b/b5/Nutri-score-C.svg";
+    }
+    else if (this.state.nutriscore >= 11 && this.state.nutriscore <= 18) {
+      nutriLogo = "https://commons.wikimedia.org/wiki/File:Nutri-score-D.svg";
+    }
+    else if (this.state.nutriscore >= 19) {
+      nutriLogo = "https://commons.wikimedia.org/wiki/File:Nutri-score-E.svg";
+    }
+    return nutriLogo;
   }
+
+getNovaLogo = () => {
+let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/ScanEat/Logo_NOVAgroup_NA.png';
+  if (this.state.novaGroup === 1) {
+    novaLogo = 'https://upload.wikimedia.org/wikipedia/commons/5/54/NOVA_group_1.svg' ;
+  }
+  else if (this.state.novaGroup === 2) {
+    novaLogo = 'https://upload.wikimedia.org/wikipedia/commons/a/ac/NOVA_group_2.svg';
+  }
+  else if (this.state.novaGroup === 3) {
+    novaLogo = 'https://upload.wikimedia.org/wikipedia/commons/2/26/NOVA_group_3.svg';
+  }
+  else if (this.state.novaGroup === 4) {
+    novaLogo = 'https://upload.wikimedia.org/wikipedia/commons/d/d3/NOVA_group_4.svg'
+  } 
+  return novaLogo;
+}
 
   render() {
     return (
-        <div>
+      <div>
         {this.state.product_name !== '' ? 
         < ModalProduct 
         name={this.state.product_name}
         image={this.state.image} 
-        carbohydrates={this.state.carbohydrates} 
+        nutriscore={this.getNutriLogo()}
+        novaGroup={this.getNovaLogo()}
         energy={this.state.energy}
+        carbohydrates={this.state.carbohydrates} 
         sugar={this.state.sugar}
+        fat={this.state.fat}
+        saturatedFat={this.state.saturatedFat}
         protein={this.state.protein}
-        
+        sodium={this.state.sodium}
+        salt={this.state.salt}
+        additives={this.state.additives}
+        vitamins={this.state.vitamins_tags}
         /> 
         : null}
-
-        {/* <img src={this.state.image} alt="produit affiché" />
-        <p>
-          code : {this.props.result}
-          nom : {this.state.product_name}
-        </p>
-        <p>
-          glucides : {this.state.carbohydrates}
-        </p>
-        <p>
-          sucre : {this.state.sugar}
-        </p>
-        <p>
-          graisses : {this.state.fat}
-        </p>
-        <p>
-          sel : {this.state.salt}
-        </p>
-        <p>
-          sodium : {this.state.sodium}
-        </p>
-        <p>
-          protéines : {this.state.protein}
-        </p>
-        <p>
-          calories : {this.state.energy}
-
-        </p> */}
-
-
-
-        {/* <p>
-      additifs : {this.state.additives}
-      </p> */}
-
       </div>
     )
   }
 };
-
 
 export default ImportData;

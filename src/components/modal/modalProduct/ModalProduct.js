@@ -1,24 +1,7 @@
 import React, { Component } from 'react';
-import { Modal, Button, Table } from 'react-materialize';
+import { Modal, Button, Table, Row, Col } from 'react-materialize';
 import './ModalProduct.css';
 import Context from "../../context/Context"
-
-// const sampleProduct = {
-//   name: "Gerblé biscuits lait chocolat",
-//   energie: "462 kcal",
-//   energiePortion: "56 kcal",
-//   image: "https://www.gerble.fr/var/site/storage/images/_aliases/related/vitalite/biscuit-lait-chocolat/3556-30-fre-FR/Biscuit-lait-chocolat.png",
-//   graisses: "22 g",
-//   graissesPortion: "2,5",
-//   glucides: "58 g",
-//   glucidesPortion: "6,7 g",
-//   fibres: "4,6 g",
-//   fibresPortion: "0,6 g",
-//   proteines: "11 g",
-//   proteinesPortion: "1,3",
-//   sel: "0,61 g",
-//   selPortion: "0,08 g"
-// }
 
 class ModalProduct extends Component {
   constructor(props) {
@@ -37,12 +20,19 @@ class ModalProduct extends Component {
           header={<h4>{this.props.name}</h4>}
           open
         >
-          {/* <div>
-            <img src={sampleProduct.image} alt="product picture" />
-          </div> */}
-          <div>
-          <img src={this.props.image}/>
-          </div>
+          <Row>
+            <Col s={2} m={2} l={2} xl={2}>
+          <img src={this.props.image} alt=''/>
+          </Col>
+
+          <Col s={2} m={2} l={2} xl={2}>
+            <img src={this.props.nutriscore} alt=''/>
+          </Col>
+
+          <Col s={2} m={2} l={2} xl={2}>
+            <img src={this.props.novaGroup} alt=''/>
+          </Col>
+          </Row>
 
           <Table >
             <thead>
@@ -86,10 +76,46 @@ class ModalProduct extends Component {
 
               <tr>
                 <td>
+                  Lipides :
+                </td>
+                <td>
+                  {this.props.fat}
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Graisses saturées :
+                </td>
+                <td>
+                  {this.props.saturatedFat}
+                </td>
+              </tr>
+
+              <tr>
+                <td>
                   Protéines :
                 </td>
                 <td>
                   {this.props.protein}
+                </td>
+              </tr>
+              
+              <tr>
+                <td>
+                  Sodium : 
+                </td>
+                <td>
+                  {this.props.sodium.toFixed(2)}
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Sel :
+                </td>
+                <td>
+                  {this.props.salt}
                 </td>
               </tr>
 
