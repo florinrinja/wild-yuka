@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Button, Table } from 'react-materialize';
+import { Modal, Button, Table, Row, Col } from 'react-materialize';
 import './ModalProduct.css';
 import Context from "../../context/Context"
 
@@ -19,9 +19,19 @@ class ModalProduct extends Component {
           header={<h4>{this.props.name}</h4>}
           open
         >
-          <div>
-            <img src={this.props.image} />
-          </div>
+          <Row>
+            <Col s={2} m={2} l={2} xl={2}>
+          <img src={this.props.image} alt=''/>
+          </Col>
+
+          <Col s={2} m={2} l={2} xl={2}>
+            <img src={this.props.nutriscore} alt=''/>
+          </Col>
+
+          <Col s={2} m={2} l={2} xl={2}>
+            <img src={this.props.novaGroup} alt=''/>
+          </Col>
+          </Row>
 
           <Table class="striped responsive-table">
             <thead>
@@ -75,6 +85,24 @@ class ModalProduct extends Component {
                   {this.props.saturatedFat}
                 </td>
               </tr>
+              <tr>
+                <td>
+                  Lipides :
+                </td>
+                <td>
+                  {this.props.fat}
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  Graisses saturées :
+                </td>
+                <td>
+                  {this.props.saturatedFat}
+                </td>
+              </tr>
+
               <tr>
                 <td>
                   Protéines :
