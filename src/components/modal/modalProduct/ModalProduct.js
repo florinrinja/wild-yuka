@@ -16,19 +16,20 @@ class ModalProduct extends Component {
           actions={
             <Button waves="yellow" modal="close" flat>Fermer</Button>
           }
-          header={<h4>{this.props.name}</h4>}
+          header={<h3> {this.props.name}</h3>}
           open
         >
-          <Row>
-            <Col s={2} m={2} l={2} xl={2}>
-          <img src={this.props.image} alt=''/>
+        
+        <Row>
+          <Col s={2} m={2} l={3} xl={4}>
+            <img src={this.props.image} alt=''/>
           </Col>
 
-          <Col s={2} m={2} l={2} xl={2}>
+          <Col s={2} m={2} l={3} xl={4}>
             <img src={this.props.nutriscore} alt=''/>
           </Col>
 
-          <Col s={2} m={2} l={2} xl={2}>
+          <Col s={2} m={2} l={3} xl={4}>
             <img src={this.props.novaGroup} alt=''/>
           </Col>
           </Row>
