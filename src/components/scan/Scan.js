@@ -5,7 +5,7 @@ import PopupCam from '../home/PopupCam';
 import Menu from '../menu/Menu';
 import ImportData from '../../components/ImportData/ImportData';
 import './Scan.css';
-import ModalProduct from '../modal/modalProduct/ModalProduct'
+// import ModalProduct from '../modal/modalProduct/ModalProduct'
 
 export default class Scan extends Component {
   constructor(props) {
