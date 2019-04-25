@@ -1,8 +1,30 @@
-
-.drawingBuffer{
-    display:none;
+.drawingBuffer {
+	display: none;
 }
-#interactive{
-    display:flex;
-    justify-content:center;
+
+#scanContainer {
+	overflow-x: hidden;
+	overflow-y: hidden;
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+}
+#pointer {
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	position: absolute;
+	z-index: 4;
+	border: 1px solid yellow;
+	height: 40%;
+	width: 80%;
+	max-width: 540px;
+}
+.logo {
+	position: absolute;
+	height: 60px;
+	width: 60px;
+	margin-left: 4%;
+	margin-top: 4%;
 }
