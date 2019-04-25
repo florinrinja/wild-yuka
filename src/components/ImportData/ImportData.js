@@ -26,27 +26,28 @@ class ImportData extends Component {
     this.getData();
   }
 
-  getData = () => {
-    fetch(`${openFood}${this.props.result}.json`)
-      .then(response => response.json())
-      .then(response => {
-          this.setState({
-          product_name: response.product.product_name,
-          image: response.product.image_front_url,
-          nutriscore: response.product.nutriments['nutrition-score-fr'],
-          novaGroup : response.product.nutriments['nova-group'],
-          energy: response.product.nutriments.energy_value,
-          carbohydrates: response.product.nutriments.carbohydrates,
-          sugar: response.product.nutriments.sugars,
-          fat: response.product.nutriments.fat,
-          saturatedFat : response.product.nutriments['saturated-fat'],
-          protein: response.product.nutriments.proteins,
-          sodium: response.product.nutriments.sodium,
-          salt: response.product.nutriments.salt,
-          additives: response.product.additives_tags,
-          });
+getData = () => {
+  fetch(`${openFood}${this.props.result}.json`)
+    .then(response => response.json())
+    .then(response => {
+        this.setState({
+        product_name: response.product.product_name,
+        image: response.product.image_front_url,
+        nutriscore: response.product.nutriments['nutrition-score-fr'],
+        novaGroup : response.product.nutriments['nova-group'],
+        energy: response.product.nutriments.energy_value,
+        carbohydrates: response.product.nutriments.carbohydrates,
+        sugar: response.product.nutriments.sugars,
+        fat: response.product.nutriments.fat,
+        saturatedFat : response.product.nutriments['saturated-fat'],
+        protein: response.product.nutriments.proteins,
+        sodium: response.product.nutriments.sodium,
+        salt: response.product.nutriments.salt,
+        additives: response.product.additives_tags,
+        vitamins: response.product.vitamins_tags,
       });
-  }
+  });
+}
 
 getNutriLogo = () => {
 let nutriLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/ScanEat/Logo_Nutriscore_NA.png';
@@ -100,10 +101,11 @@ let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/S
         fat={this.state.fat}
         saturatedFat={this.state.saturatedFat}
         protein={this.state.protein}
-        sodium={this.state.sodium}
+        fat={this.state.fat}
+        saturatedFat={this.state.saturatedFat}
         salt={this.state.salt}
+        sodium={this.state.sodium.toFixed(2)}
         additives={this.state.additives}
-        vitamins={this.state.vitamins_tags}
         /> 
         : null}
       </div>

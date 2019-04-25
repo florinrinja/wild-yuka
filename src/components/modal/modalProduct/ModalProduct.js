@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Modal, Button, Table, Row, Col } from 'react-materialize';
 import './ModalProduct.css';
+import Context from "../../context/Context"
 
 class ModalProduct extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
-    console.log(props.data);
-  } 
-  
+    console.log(props.name)
+  }
+
   render() {
     return (
       <div>
@@ -32,7 +33,7 @@ class ModalProduct extends Component {
           </Col>
           </Row>
 
-          <Table >
+          <Table class="striped responsive-table">
             <thead>
               <tr>
                 <th>
@@ -44,7 +45,6 @@ class ModalProduct extends Component {
               </tr>
             </thead>
             <tbody>
-
               <tr>
                 <td>
                   Énergie :
@@ -53,25 +53,38 @@ class ModalProduct extends Component {
                   {this.props.energy}
                 </td>
               </tr>
-
               <tr>
                 <td>
-                  Glucides : 
+                  Glucides :
                 </td>
                 <td>
                   {this.props.carbohydrates}
                 </td>
               </tr>
-
+                <tr>
+                  <td>
+                    Sucres :
+                  </td>
+                  <td>
+                    {this.props.sugar}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Lipides :
+                  </td>
+                  <td>
+                    {this.props.fat}
+                  </td>
+                </tr>
               <tr>
                 <td>
-                  Sucres :
+                  Graisses saturées :
                 </td>
                 <td>
-                  {this.props.sugar}
+                  {this.props.saturatedFat}
                 </td>
               </tr>
-
               <tr>
                 <td>
                   Lipides :
@@ -98,16 +111,14 @@ class ModalProduct extends Component {
                   {this.props.protein}
                 </td>
               </tr>
-              
               <tr>
                 <td>
-                  Sodium : 
+                  Sodium :
                 </td>
                 <td>
-                  {this.props.sodium.toFixed(2)}
+                  {this.props.sodium}
                 </td>
               </tr>
-
               <tr>
                 <td>
                   Sel :
@@ -116,9 +127,24 @@ class ModalProduct extends Component {
                   {this.props.salt}
                 </td>
               </tr>
-
+              <tr>
+                <td>
+                  Additifs :
+                </td>
+                <td>
+                  {this.props.additives}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Vitamines :
+                </td>
+                <td>
+                  {this.props.vitamins}
+                </td>
+              </tr>
             </tbody>
-           </Table>
+          </Table>
         </Modal>
       </div>
     )
