@@ -9,10 +9,9 @@ const ButtonHistory = () => {
       floating
       large
       className="yellow accent-2"
-      fab={{ direction: 'right' }}
       icon="menu"
       waves="light"
-      style={{ right: '1%' }}
+      style={{ right: '3%',bottom: '2%', position:'absolute' }}
     />}
     >
       <p>
