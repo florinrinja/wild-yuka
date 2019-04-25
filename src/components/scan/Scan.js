@@ -5,15 +5,14 @@ import PopupCam from '../home/PopupCam';
 import Menu from '../menu/Menu';
 import ImportData from '../../components/ImportData/ImportData';
 import './Scan.css';
-// import ModalProduct from '../modal/modalProduct/ModalProduct'
+import SmallLogo from'../home/images/untitled.svg';
+
 
 export default class Scan extends Component {
   constructor(props) {
     super(props);
     this.state = {
       code: '',
-      productName: '',
-      productImage: '',
       popup: false,
       isScan: false
     }
@@ -27,10 +26,10 @@ export default class Scan extends Component {
     Quagga.init(
       {
         inputStream: {
-          type: 'LiveStream',
+					type: 'LiveStream',
           constraints: {
-            width: 640,
-            height: 480,
+            maxHeight: window.innerHeight,
+            maxWitdh: window.innerWidth,
             facingMode: 'environment', // or user
           },
         },
@@ -42,14 +41,20 @@ export default class Scan extends Component {
         decoder: {
           readers: ['ean_reader'],
           debug: {
-            drawBoundingBox: true,
+            drawBoundingBox: false,
             showFrequency: false,
             drawScanline: false,
             showPattern: false
           },
+          area: { // defines rectangle of the detection/localization area
+            top: "20%",    // top offset
+            right: "20%",  // right offset
+            left: "20%",   // left offset
+            bottom: "20%"  // bottom offset
+          },
           multiple: false
         },
-        locate: true,
+        locate: false,
       },
       function (err) {
         if (err) {
@@ -61,40 +66,34 @@ export default class Scan extends Component {
       }
     );
     Quagga.onDetected(this._onDetected);
-    // this.getProduct()
   }
-  // getProduct = () => {
-  // 	fetch(`https://fr.openfoodfacts.org/api/v0/produit/${this.state.code}.json`)
-  // 		.then(response  =>  response.json())
-  //     .then(response  => {
-  // 			console.log(response)
-  // 			this.setState({
-  // 				productImage:  response.product.image_front_url,
-  //         productName:		response.product.product_name,
-  //         additives:response.product.additives_original_tags 
-  //       });
-  // 		});
-
-  // }
 
   componentWillUnmount() {
     Quagga.offDetected(this._onDetected);
   }
-
   _onDetected = (data) => {
-    this.setState({ code: data.codeResult.code });
-    console.log(this.state.code)
-    // console.log(this.state.code)
-    this.setState({ isScan: true })
-    Quagga.pause();
-  }
-
+    //limit wrong code detection (no us origin) with first number
+    if (data.codeResult.code[0]>=3){
+      this.setState({ code: data.codeResult.code, isScan:!this.state.isScan})};
+    this.state.isScan? Quagga.pause(): Quagga.start()
+    }
+     
   render() {
     return (
-      <div style={{ Height: window.innerHeight, witdh: window.innerWidth }}>
-        {/* {this.state.isScan ? <div><h1>{this.state.productName}</h1><img src={this.state.productImage}></img></div>:null} */}
-        {this.state.popup ? <Link to="/" exact><PopupCam /></Link> : <div><Menu /><div id="interactive" className="viewport"></div></div>}
-        {this.state.isScan ?<ImportData result={this.state.code}/>  : null}
+      <div>
+        {this.state.popup ? <Link to="/" exact><PopupCam /></Link> : 
+        <div><Menu />
+          <Link to="/">
+            <img class="logo" src={SmallLogo} alt="smallLogo"/>
+          </Link>
+          <div id="scanContainer" style={{ maxHeight: window.innerHeight, maxWitdh: window.innerWidth }}>
+            <div id="pointer">
+            </div>
+            <div id="interactive" className="viewport">
+            </div>
+          </div>
+        </div>}
+        {this.state.isScan ?<ImportData result={this.state.code}/>: null}
       </div>
     )
   }

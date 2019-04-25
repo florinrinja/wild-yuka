@@ -7,10 +7,10 @@ const ButtonTeam = () => {
       floating
       large
       className="yellow accent-2"
-      fab={{ direction: 'left' }}
+      // fab={{ direction: 'left' }}
       icon="help"
       waves="light"
-      style={{ left: '1%' }}
+      style={{ left: '3%', bottom: '2%',position:'absolute' }}
     />}
     >
       <p>Feature 1</p>
