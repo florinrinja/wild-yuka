@@ -96,6 +96,7 @@ class ModalProduct extends Component {
           }
           open
         >
+        
           <div>
             <img src={this.props.image} className='mon_image' alt='ProductImage' />
           </div>
