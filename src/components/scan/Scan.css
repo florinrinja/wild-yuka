@@ -28,3 +28,13 @@
 	margin-left: 4%;
 	margin-top: 4%;
 }
+
+
+#interactive{
+    display:flex;
+    justify-content:center;
+}
+
+.history{
+    display: none !important;
+}

@@ -9,7 +9,8 @@
     "react-dom": "^16.8.6",
     "react-materialize": "^3.0.4",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "react-swipe-to-delete-component": "^0.4.0"
   },
   "scripts": {
     "start": "react-scripts start",

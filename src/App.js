@@ -31,7 +31,7 @@ class App extends Component {
 
     const style = {
       backgroundColor: '#fffaf2',
-      height: this.height
+      height: this.state.height,
     };
 
     return (

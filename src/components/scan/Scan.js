@@ -6,6 +6,10 @@ import Menu from '../menu/Menu';
 import ImportData from '../../components/ImportData/ImportData';
 import './Scan.css';
 import SmallLogo from'../home/images/untitled.svg';
+import ModalProduct from '../modal/modalProduct/ModalProduct';
+// import Context from '../context/Context';
+import Hystory from '../menu/buttonHistory/Hystory';
+
 
 export default class Scan extends Component {
   constructor(props) {
@@ -91,8 +95,10 @@ export default class Scan extends Component {
   }
 
   render() {
+   
+    
     return (
-      <div>
+      <div style={{ Height: window.innerHeight, witdh: window.innerWidth }}>
         {this.state.popup ? <Link to="/" exact><PopupCam /></Link> : 
         <div><Menu />
           <Link to="/">
@@ -106,6 +112,11 @@ export default class Scan extends Component {
           </div>
         </div>}
         {this.state.isScan ?<ImportData result={this.state.code}/>: null}
+        <div  className="history">
+        {this.state.isScan ?  <Hystory result={this.state.code}/>:null}
+        {this.state.isScan ?  <ModalProduct result={this.state.code}/>:null}
+        </div>
+
       </div>
     )
   }
