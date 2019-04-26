@@ -88,6 +88,9 @@ let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/S
 
 
   render() {
+
+  console.log(this.state.additives.map(x => `additif numero ${x}`));
+
     return (
       <div>
         {this.state.product_name !== '' ? 

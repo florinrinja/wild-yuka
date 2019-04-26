@@ -81,32 +81,7 @@ class ModalProduct extends Component {
           header={
             <div>
               <h4><small>{this.props.name} </small></h4>
-              {/* {
-                this.state.isPresent?
-                <div>
-                <a href="javascript:void(0);"
-                   className="btn-flat btn-save disabled">
-                  <i className="material-icons">save</i>
-                </a>
-                <a href="javascript:void(0);"
-                   className="btn-floating btn-remove"
-                   onClick={this.deleteCode}>
-                  <i className="material-icons">delete</i>
-                </a>
-                </div>
-                :
-                <div>
-                <a href="javascript:void(0);"
-                   onClick={this.saveCode}
-                   className="btn-floating btn-save">
-                  <i className="material-icons">save</i>
-                </a>
-                <a href="javascript:void(0);"
-                   className="btn-flat btn-remove disabled">
-                  <i className="material-icons">delete</i>
-                </a>
-                </div>
-              } */}
+              
               <a href="javascript:void(0);" 
                  onClick={this.state.isPresent?null:this.saveCode} 
                  className={this.state.isPresent? "btn-flat btn-save disabled" :"btn-floating btn-save"} >
@@ -226,14 +201,14 @@ class ModalProduct extends Component {
             <tbody> 
               <tr>
               <td>
-                Additifs :
+                Additifs :{this.props.additifs}
               </td>
               <td>
-                <p>{this.props.additives[0]? this.props.additives[0]:'N/A'}</p>
+                {/* <p>{this.props.additives[0]? this.props.additives[0]:'N/A'}</p>
                 <p>{this.props.additives[1]? this.props.additives[1]:''}</p>
                 <p>{this.props.additives[2]? this.props.additives[2]:''}</p>
                 <p>{this.props.additives[3]? this.props.additives[3]:''}</p>
-                <p>{this.props.additives[4]? this.props.additives[4]:''}</p>
+                <p>{this.props.additives[4]? this.props.additives[4]:''}</p> */}
               </td>
               </tr>
             </tbody>

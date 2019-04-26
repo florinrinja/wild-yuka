@@ -19,9 +19,9 @@ const ButtonTeam = () => {
       style={{ left: '3%', bottom: '2%',position:'absolute' }}
     />}
     >
-      <Row>
+      <Row key={0}> 
         <Col m={6} s={12}>
-          <Card 
+          <Card key={0}
           title="Florin"
           header={< CardTitle />} actions={[<a/>]}>
             <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267605/ScanEat/florin.png"
@@ -29,7 +29,7 @@ const ButtonTeam = () => {
           </Card>
         </Col>
         <Col m={6} s={12}>
-          <Card 
+          <Card key={1}
             title="Juliette"
             header={<CardTitle />} actions={[<a />]}>
             <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267604/ScanEat/juliette.png"
@@ -37,16 +37,16 @@ const ButtonTeam = () => {
           </Card>
         </Col>
       </Row>
-      <Row>
+      <Row key={1}>
         <Col m={6} s={12}>
-          <Card header={<CardTitle />} actions={[<a />]} >
+          <Card key={2} header={<CardTitle />} actions={[<a />]} >
             <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267609/ScanEat/rachel.png"
               alt="Rachel O.S" />
             Rachel
           </Card>
         </Col>
         <Col m={6} s={12}>
-          <Card header={<CardTitle />} actions={[<a />]}>
+          <Card key={3} header={<CardTitle />} actions={[<a />]}>
             <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267616/ScanEat/romain.jpg"
               className="responsive-img" alt="Romain Dailly" />
             Romain
