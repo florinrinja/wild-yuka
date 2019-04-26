@@ -74,10 +74,10 @@ export default class Scan extends Component {
       fetch(`https://fr.openfoodfacts.org/api/v0/produit/${data.codeResult.code}.json`)
       .then(response => response.json())
       .then(response => {
-        if (response.product.product_name!==''&& !this.state.isScan) {
+        if (response.status === 1 && !this.state.isScan) {
           this.setState({ isScan:true, code: data.codeResult.code });
           Quagga.pause()
-        } else if(this.state.isScan && response.product.product_name!=='') {
+        } else if(this.state.isScan && response.status === 1) {
           this.setState({ code: data.codeResult.code, isScan:false}, ()=>{
           this.setState({ isScan : true })
           Quagga.pause()
