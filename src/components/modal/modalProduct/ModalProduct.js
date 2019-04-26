@@ -97,13 +97,13 @@ class ModalProduct extends Component {
           open
         >
           <div>
-            <img src={this.props.image} className='mon_image' alt='' />
+            <img src={this.props.image} className='mon_image' alt='ProductImage' />
           </div>
           <div className='nutri_nova'>
-            <img src={this.props.nutriscore} alt='' />
-            <img src={this.props.novaGroup} alt='' style={{maxHeight:70}}/>
+            <img src={this.props.nutriscore} alt='Nutriscore' />
+            <img src={this.props.novaGroup} alt='NovaGroup' style={{maxHeight:70}}/>
           </div> 
-          <Table class="striped">
+            <Table class="striped">
             <thead>
               <tr>
                 <th>

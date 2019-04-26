@@ -84,9 +84,6 @@ let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/S
   return novaLogo;
 }
 
- 
-
-
   render() {
 
   console.log(this.state.additives.map(x => `additif numero ${x}`));
@@ -103,7 +100,7 @@ let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/S
         carbohydrates={this.state.carbohydrates} 
         sugar={this.state.sugar}
         fat={this.state.fat}
-        saturatedFat={this.state.saturatedFat}
+        saturatedFat={this.state.sadditivesaturatedFat}
         protein={this.state.protein}
         salt={this.state.salt}
         sodium={this.state.sodium.toFixed(2)}
