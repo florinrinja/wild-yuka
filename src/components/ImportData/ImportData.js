@@ -46,7 +46,7 @@ getData = () => {
         additives: response.product.additives_tags,
         vitamins: response.product.vitamins_tags,
       });
-    });
+  });
 }
 
 getNutriLogo = () => {
@@ -68,7 +68,7 @@ let nutriLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/
     }
     return nutriLogo;
   }
-
+  
 getNovaLogo = () => {
 let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/ScanEat/Logo_NOVAgroup_NA.png';
   if (this.state.novaGroup === 1) {
@@ -101,8 +101,6 @@ let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/S
         fat={this.state.fat}
         saturatedFat={this.state.saturatedFat}
         protein={this.state.protein}
-        fat={this.state.fat}
-        saturatedFat={this.state.saturatedFat}
         salt={this.state.salt}
         sodium={this.state.sodium.toFixed(2)}
         additives={this.state.additives}
