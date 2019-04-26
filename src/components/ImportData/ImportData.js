@@ -44,7 +44,7 @@ getData = () => {
         salt: response.product.nutriments.salt,
         additives: response.product.additives_tags,
       });
-    });
+  });
 }
 
 getNutriLogo = () => {
@@ -66,7 +66,7 @@ let nutriLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/
     }
     return nutriLogo;
   }
-
+  
 getNovaLogo = () => {
 let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/ScanEat/Logo_NOVAgroup_NA.png';
   if (this.state.novaGroup === 1) {

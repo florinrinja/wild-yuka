@@ -7,7 +7,6 @@ import ImportData from '../../components/ImportData/ImportData';
 import './Scan.css';
 import SmallLogo from'../home/images/untitled.svg';
 
-
 export default class Scan extends Component {
   constructor(props) {
     super(props);
@@ -17,12 +16,10 @@ export default class Scan extends Component {
       isScan: false,
     }
   }
-
   componentDidMount() {
     const openPopup = () => {
       this.setState({ popup: !this.state.popup })
     };
-
     Quagga.init(
       {
         inputStream: {
@@ -67,17 +64,32 @@ export default class Scan extends Component {
     );
     Quagga.onDetected(this._onDetected);
   }
-
   componentWillUnmount() {
     Quagga.offDetected(this._onDetected);
   }
   _onDetected = (data) => {
     //limit wrong code detection (no us origin) with first number
     if (data.codeResult.code[0]>=3){
-      this.setState({ code: data.codeResult.code, isScan:!this.state.isScan})};
-    this.state.isScan? Quagga.pause(): Quagga.start()
-    }
-     
+      //callback with fetch to see if result is a valid code
+      fetch(`https://fr.openfoodfacts.org/api/v0/produit/${data.codeResult.code}.json`)
+      .then(response => response.json())
+      .then(response => {
+        if (response.product.product_name!==''&& !this.state.isScan) {
+          this.setState({ isScan:true, code: data.codeResult.code });
+          Quagga.pause()
+        } else if(this.state.isScan && response.product.product_name!=='') {
+          this.setState({ code: data.codeResult.code, isScan:false}, ()=>{
+          this.setState({ isScan : true })
+          Quagga.pause()
+          })
+        }
+        setTimeout(()=>{
+          Quagga.start()
+        }, 1500)
+      })
+    }        
+  }
+
   render() {
     return (
       <div>
