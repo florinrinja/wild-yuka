@@ -81,7 +81,7 @@ export default class Scan extends Component {
         if (response.status === 1 && !this.state.isScan) {
           this.setState({ isScan:true, code: data.codeResult.code });
           Quagga.pause()
-        } else if(this.state.isScan && response.status === 1) {
+        } else if(this.state.isScan && response.status===1) {
           this.setState({ code: data.codeResult.code, isScan:false}, ()=>{
           this.setState({ isScan : true })
           Quagga.pause()
@@ -102,7 +102,7 @@ export default class Scan extends Component {
         {this.state.popup ? <Link to="/" exact><PopupCam /></Link> : 
         <div><Menu />
           <Link to="/">
-            <img class="logo" src={SmallLogo} alt="smallLogo"/>
+            <img className="logo" src={SmallLogo} alt="smallLogo"/>
           </Link>
           <div id="scanContainer" style={{ maxHeight: window.innerHeight, maxWitdh: window.innerWidth }}>
             <div id="pointer">
