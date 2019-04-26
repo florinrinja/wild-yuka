@@ -13,7 +13,7 @@ export default class ButtonHistory extends Component {
           large
           className="yellow accent-2"
           // fab={{ direction: 'right' }}
-          icon="menu"
+          icon="history"
           waves="light"
           style={{ right: '3%', bottom: '2%', position: 'absolute' }}
         />}
