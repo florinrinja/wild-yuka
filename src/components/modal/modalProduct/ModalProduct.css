@@ -11,3 +11,7 @@ img {
 table {
 	text-align: center;
 }
+
+.btn-save {
+	margin-right: 5px;
+}

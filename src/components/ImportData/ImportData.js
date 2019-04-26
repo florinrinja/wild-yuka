@@ -49,10 +49,14 @@ class ImportData extends Component {
       });
   }
 
+ 
+
+
   render() {
     return (
       <div>
         <img src={this.state.image} alt="produit affiché" />
+        
         <p>
           code : {this.props.result}
           nom : {this.state.product_name}
