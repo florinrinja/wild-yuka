@@ -100,8 +100,7 @@ class Hystory extends Component {
 
     let previousArr = this.state.array;
     previousArr.splice(index, 1);
-    console.log(previousArr);
-
+    // console.log(previousArr);
 
     localStorage.setItem('myCodes', JSON.stringify(previousArr));
     this.setState({ array: previousArr })
