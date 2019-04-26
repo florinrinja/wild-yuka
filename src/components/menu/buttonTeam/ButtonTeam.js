@@ -19,19 +19,17 @@ const ButtonTeam = () => {
       style={{ left: '3%', bottom: '2%',position:'absolute' }}
     />}
     >
-      <Row key={0}> 
+      <Row>
         <Col m={6} s={12}>
-          <Card key={0}
+          <Card 
           title="Florin"
           actions={[<a href="https://github.com/florinrinja" target='_blank'> Github</a>]}>
             <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267605/ScanEat/florin.png"
             className="responsive-img" alt="Florin Rinja" />
-         
           </Card>
         </Col>
-
         <Col m={6} s={12}>
-          <Card key={1}
+          <Card 
             title="Juliette"
             actions={[<a href="https://github.com/juliettemichaux"target='_blank'> Github</a>]}>
             <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267604/ScanEat/juliette.png"
@@ -39,9 +37,7 @@ const ButtonTeam = () => {
           </Card>
         </Col>
       </Row>
-
       <Row>
-
         <Col m={6} s={12}>
           <Card 
           title="Rachel"
