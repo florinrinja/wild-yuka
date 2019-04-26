@@ -85,7 +85,7 @@ export default class Scan extends Component {
         }
         setTimeout(()=>{
           Quagga.start()
-        }, 1500)
+        }, 5000)
       })
     }        
   }
