@@ -25,7 +25,7 @@ class ModalProduct extends Component {
             <img src={this.props.nutriscore} alt='' />
             <img src={this.props.novaGroup} alt='' style={{maxHeight:70}}/>
           </div> 
-          <Table class="striped">
+            <Table class="striped">
             <thead>
               <tr>
                 <th>

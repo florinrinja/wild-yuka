@@ -20,39 +20,50 @@ const ButtonTeam = () => {
     />}
     >
       <Row>
+
         <Col m={6} s={12}>
           <Card 
           title="Florin"
-          header={< CardTitle />} actions={[<a/>]}>
+          actions={[<a href="https://github.com/florinrinja"> Github</a>]}>
             <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267605/ScanEat/florin.png"
-              className="responsive-img" alt="Florin Rinja" />
+            className="responsive-img" alt="Florin Rinja" />
+         
           </Card>
         </Col>
+
         <Col m={6} s={12}>
           <Card 
             title="Juliette"
-            header={<CardTitle />} actions={[<a />]}>
+            actions={[<a href="https://github.com/juliettemichaux"> Github</a>]}>
             <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267604/ScanEat/juliette.png"
             className="responsive-img" alt="Juliette Michaux" />
           </Card>
         </Col>
       </Row>
+
       <Row>
+
         <Col m={6} s={12}>
-          <Card header={<CardTitle />} actions={[<a />]} >
-            <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267609/ScanEat/rachel.png"
-              alt="Rachel O.S" />
-            Rachel
+          <Card 
+          title="Rachel"
+          actions={[<a href="https://github.com/rachel-os/"> Github</a>]} >
+          <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556280898/ScanEat/rachel.png" className="responsive-img"
+          alt="Rachel O.S" />
           </Card>
         </Col>
+
         <Col m={6} s={12}>
-          <Card header={<CardTitle />} actions={[<a />]}>
-            <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267616/ScanEat/romain.jpg"
-              className="responsive-img" alt="Romain Dailly" />
-            Romain
+          <Card 
+          title="Romain"
+          actions={[<a href="https://github.com/romain-dailly">Github</a>]}>
+          <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267616/ScanEat/romain.jpg"
+          className="responsive-img" alt="Romain Dailly" />
           </Card>
+
         </Col>
-      </Row>    
+
+      </Row>
+
     </Modal>
   )
 }
