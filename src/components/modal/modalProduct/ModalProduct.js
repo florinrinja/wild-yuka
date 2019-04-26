@@ -122,11 +122,11 @@ class ModalProduct extends Component {
           open
         >
           <div>
-            <img src={this.props.image} className='mon_image' alt='' />
+            <img src={this.props.image} className='mon_image' alt='ProductImage' />
           </div>
           <div className='nutri_nova'>
-            <img src={this.props.nutriscore} alt='' />
-            <img src={this.props.novaGroup} alt='' style={{maxHeight:70}}/>
+            <img src={this.props.nutriscore} alt='Nutriscore' />
+            <img src={this.props.novaGroup} alt='NovaGroup' style={{maxHeight:70}}/>
           </div> 
             <Table class="striped">
             <thead>
@@ -225,16 +225,16 @@ class ModalProduct extends Component {
           <Table class="striped">
             <tbody> 
               <tr>
-              <td>
-                Additifs :
-              </td>
-              <td>
-                <p>{this.props.additives[0]? this.props.additives[0]:'N/A'}</p>
-                <p>{this.props.additives[1]? this.props.additives[1]:''}</p>
-                <p>{this.props.additives[2]? this.props.additives[2]:''}</p>
-                <p>{this.props.additives[3]? this.props.additives[3]:''}</p>
-                <p>{this.props.additives[4]? this.props.additives[4]:''}</p>
-              </td>
+                <td>
+                  Additifs :
+                </td>
+                <td>
+                  <p>{this.props.additives[0]? this.props.additives[0]:'N/A'}</p>
+                  <p>{this.props.additives[1]? this.props.additives[1]:''}</p>
+                  <p>{this.props.additives[2]? this.props.additives[2]:''}</p>
+                  <p>{this.props.additives[3]? this.props.additives[3]:''}</p>
+                  <p>{this.props.additives[4]? this.props.additives[4]:''}</p>
+                </td>
               </tr>
             </tbody>
           </Table>

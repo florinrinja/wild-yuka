@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal, Card, Row, Col, CardTitle } from 'react-materialize';
+import { Button, Modal, Card, Row, Col } from 'react-materialize';
 import './ButtonTeam.css';
 
 const ButtonTeam = () => {
@@ -24,7 +24,7 @@ const ButtonTeam = () => {
         <Col m={6} s={12}>
           <Card 
           title="Florin"
-          actions={[<a href="https://github.com/florinrinja"> Github</a>]}>
+          actions={[<a href="https://github.com/florinrinja" target='_blank'> Github</a>]}>
             <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267605/ScanEat/florin.png"
             className="responsive-img" alt="Florin Rinja" />
          
@@ -34,7 +34,7 @@ const ButtonTeam = () => {
         <Col m={6} s={12}>
           <Card 
             title="Juliette"
-            actions={[<a href="https://github.com/juliettemichaux"> Github</a>]}>
+            actions={[<a href="https://github.com/juliettemichaux"target='_blank'> Github</a>]}>
             <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267604/ScanEat/juliette.png"
             className="responsive-img" alt="Juliette Michaux" />
           </Card>
@@ -46,7 +46,7 @@ const ButtonTeam = () => {
         <Col m={6} s={12}>
           <Card 
           title="Rachel"
-          actions={[<a href="https://github.com/rachel-os/"> Github</a>]} >
+          actions={[<a href="https://github.com/rachel-os/"target='_blank'> Github</a>]} >
           <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556280898/ScanEat/rachel.png" className="responsive-img"
           alt="Rachel O.S" />
           </Card>
@@ -55,7 +55,7 @@ const ButtonTeam = () => {
         <Col m={6} s={12}>
           <Card 
           title="Romain"
-          actions={[<a href="https://github.com/romain-dailly">Github</a>]}>
+          actions={[<a href="https://github.com/romain-dailly" target='_blank'>Github</a>]}>
           <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267616/ScanEat/romain.jpg"
           className="responsive-img" alt="Romain Dailly" />
           </Card>
