@@ -84,6 +84,9 @@ let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/S
   return novaLogo;
 }
 
+ 
+
+
   render() {
     return (
       <div>

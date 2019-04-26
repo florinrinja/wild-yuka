@@ -5,7 +5,70 @@ import './ModalProduct.css';
 class ModalProduct extends Component {
   constructor(props) {
     super(props);
-    console.log(props.name)
+    this.state = {
+      codes: [],
+      isPresent: null
+    }
+  }
+
+  componentDidMount() {
+    let code = this.props.result;
+    // console.log(code)
+    let nums = localStorage.getItem('myCodes');
+    let arr = [];
+    if (nums) {
+      arr = JSON.parse(nums);
+      if (arr.includes(code)) {
+        this.setState({
+          isPresent:true
+        })
+      }else{
+        this.setState({
+          isPresent:false
+        })
+      }
+    }
+  }
+
+  saveCode = (ev) => {
+    let code = this.props.result;
+    let _codes = localStorage.getItem('myCodes');
+    let arr = [];
+    if (_codes) {
+      arr = JSON.parse(_codes);
+      arr.push(code);
+      arr = Array.from(new Set(arr));
+      localStorage.setItem('myCodes', JSON.stringify(arr));
+    } else {
+      arr = [];
+      arr.push(code);
+      localStorage.setItem('myCodes', JSON.stringify(arr));
+    }
+    this.setState({ 
+      codes: _codes,
+      isPresent:true
+     })
+  }
+
+  deleteCode = (ev) => {
+    let code = this.props.result;
+    let _codes = localStorage.getItem('myCodes');
+    let arr = [];
+
+    if (_codes) {
+      arr = JSON.parse(_codes);
+      for (let i = 0; i < arr.length; i++) { //loop over the collection
+        if (arr[i] === code) { //see if code match
+          arr.splice(i, 1); //remove item from array
+          break; //exit loop
+        }
+      }
+      localStorage.setItem('myCodes', JSON.stringify(arr));
+    }
+    this.setState({ 
+      codes: _codes,
+    isPresent:false
+    })
   }
 
   render() {
@@ -15,9 +78,49 @@ class ModalProduct extends Component {
           actions={
             <Button waves="yellow" modal="close" flat>Fermer</Button>
           }
-          header={<h4> {this.props.name}</h4>}
+          header={
+            <div>
+              <h4><small>{this.props.name} </small></h4>
+              {/* {
+                this.state.isPresent?
+                <div>
+                <a href="javascript:void(0);"
+                   className="btn-flat btn-save disabled">
+                  <i className="material-icons">save</i>
+                </a>
+                <a href="javascript:void(0);"
+                   className="btn-floating btn-remove"
+                   onClick={this.deleteCode}>
+                  <i className="material-icons">delete</i>
+                </a>
+                </div>
+                :
+                <div>
+                <a href="javascript:void(0);"
+                   onClick={this.saveCode}
+                   className="btn-floating btn-save">
+                  <i className="material-icons">save</i>
+                </a>
+                <a href="javascript:void(0);"
+                   className="btn-flat btn-remove disabled">
+                  <i className="material-icons">delete</i>
+                </a>
+                </div>
+              } */}
+              <a href="javascript:void(0);" 
+                 onClick={this.state.isPresent?null:this.saveCode} 
+                 className={this.state.isPresent? "btn-flat btn-save disabled" :"btn-floating btn-save"} >
+                <i className="material-icons">save</i>
+              </a>
+              <a href="javascript:void(0)" 
+                 onClick={this.state.isPresent?this.deleteCode:null} 
+                 className={this.state.isPresent?"btn-floating btn-remove":"btn-flat btn-remove disabled"}>
+                <i className="material-icons">delete</i>
+              </a>
+            </div>
+          }
           open
-          >
+        >
           <div>
             <img src={this.props.image} className='mon_image' alt='' />
           </div>

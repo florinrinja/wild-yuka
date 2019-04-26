@@ -21,3 +21,7 @@ table {
 	justify-content: center;
 	margin: auto
 }
+
+.btn-save {
+	margin-right: 5px;
+}

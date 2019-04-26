@@ -15,12 +15,13 @@ class Canvas extends Component {
     this.update();
   }
 
-  update = () => {
-    this.setState({
-      height: window.innerHeight,
-      width: window.innerWidth
-    });
-  };
+	update = () => {
+		this.setState({
+			height: window.innerHeight,
+			width: window.innerWidth
+		});
+		// console.log(this.state.width)
+	};
 
   render() {
     const viewBox = [0, 0, window.innerWidth, (window.innerHeight - (window.innerHeight * 0.3))];
