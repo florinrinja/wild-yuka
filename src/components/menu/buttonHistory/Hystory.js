@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import SwipeToDelete from 'react-swipe-to-delete-component';
 import './ButtonHistory.css';
-import { stat } from 'fs';
+// import { stat } from 'fs';
 import image from '../../home/images/download.png';
 
 const openFood = 'https://fr.openfoodfacts.org/api/v0/produit/';

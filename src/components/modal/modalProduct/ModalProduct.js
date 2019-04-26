@@ -81,7 +81,6 @@ class ModalProduct extends Component {
           header={
             <div>
               <h4><small>{this.props.name} </small></h4>
-              
               <a href="javascript:void(0);" 
                  onClick={this.state.isPresent?null:this.saveCode} 
                  className={this.state.isPresent? "btn-flat btn-save disabled" :"btn-floating btn-save"} >
