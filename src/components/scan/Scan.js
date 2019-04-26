@@ -86,7 +86,7 @@ export default class Scan extends Component {
           this.setState({ isScan : true })
           Quagga.pause()
           })
-        }
+        } 
         setTimeout(()=>{
           Quagga.start()
         }, 5000)
