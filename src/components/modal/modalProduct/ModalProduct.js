@@ -75,6 +75,7 @@ class ModalProduct extends Component {
     return (
       <div>
         <Modal
+          className=""
           actions={
             <Button waves="yellow" modal="close" flat>Fermer</Button>
           }
@@ -93,7 +94,7 @@ class ModalProduct extends Component {
               </a>
             </div>
           }
-          open
+          open={true}
         >
           <div>
             <img src={this.props.image} className='mon_image' alt='ProductImage' />
@@ -102,7 +103,7 @@ class ModalProduct extends Component {
             <img src={this.props.nutriscore} alt='Nutriscore' />
             <img src={this.props.novaGroup} alt='NovaGroup' style={{maxHeight:70}}/>
           </div> 
-            <Table class="striped">
+            <Table className="striped">
             <thead>
               <tr>
                 <th>
@@ -196,7 +197,7 @@ class ModalProduct extends Component {
               </tr>
             </tbody>
           </Table>
-          <Table class="striped">
+          <Table className="striped">
             <tbody> 
               <tr>
               <td>

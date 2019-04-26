@@ -66,7 +66,7 @@ class Hystory extends Component {
     fetch(url)
       .then(response => response.json())
       .then(response => {
-        console.log(response)
+        // console.log(response)
         let images = this.state.image;
         images[index] = response.product.image_front_url;
         let names = this.state.name;
@@ -110,7 +110,7 @@ class Hystory extends Component {
         {this.state.array.map((item, index) =>
           <div key={index}>
             {this.state.status[index] === 1 ? this.state.name[index] : `${notFound}`}
-            <img src={this.state.status[index] === 1 ? this.state.image[index] : `${image}`} />
+            <img src={this.state.status[index] === 1 ? this.state.image[index] : `${image}`} alt={this.state.name[index]} />
             <a href="javascript:void(0)"
               onClick={() => this.deleteCode(index)}
               className={"btn-floating btn-remove"}>
