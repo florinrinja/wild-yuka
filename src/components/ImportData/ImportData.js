@@ -92,6 +92,7 @@ let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/S
       <div>
         {this.state.product_name !== '' ? 
         < ModalProduct 
+        result={this.props.result}
         name={this.state.product_name}
         image={this.state.image} 
         nutriscore={this.getNutriLogo()}
