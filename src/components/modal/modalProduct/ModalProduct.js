@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Modal, Button, Table, Row, Col } from 'react-materialize';
+import { Modal, Button, Table } from 'react-materialize';
 import './ModalProduct.css';
-import Context from "../../context/Context"
 
 class ModalProduct extends Component {
   constructor(props) {
@@ -16,25 +15,17 @@ class ModalProduct extends Component {
           actions={
             <Button waves="yellow" modal="close" flat>Fermer</Button>
           }
-          header={<h3> {this.props.name}</h3>}
+          header={<h4> {this.props.name}</h4>}
           open
-        >
-        
-        <Row>
-          <Col s={2} m={2} l={3} xl={4}>
-            <img src={this.props.image} alt=''/>
-          </Col>
-
-          <Col s={2} m={2} l={3} xl={4}>
-            <img src={this.props.nutriscore} alt=''/>
-          </Col>
-
-          <Col s={2} m={2} l={3} xl={4}>
-            <img src={this.props.novaGroup} alt=''/>
-          </Col>
-          </Row>
-
-          <Table class="striped responsive-table">
+          >
+          <div>
+            <img src={this.props.image} className='mon_image' alt='' />
+          </div>
+          <div className='nutri_nova'>
+            <img src={this.props.nutriscore} alt='' />
+            <img src={this.props.novaGroup} alt='' style={{maxHeight:70}}/>
+          </div> 
+          <Table class="striped">
             <thead>
               <tr>
                 <th>
@@ -94,7 +85,6 @@ class ModalProduct extends Component {
                   {this.props.fat}
                 </td>
               </tr>
-
               <tr>
                 <td>
                   Graisses saturées :
@@ -103,7 +93,6 @@ class ModalProduct extends Component {
                   {this.props.saturatedFat}
                 </td>
               </tr>
-
               <tr>
                 <td>
                   Protéines :

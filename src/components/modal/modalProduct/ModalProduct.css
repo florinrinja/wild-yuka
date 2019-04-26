@@ -1,13 +1,23 @@
 
-h3 {
+h4 {
 	text-align: center;
 	margin-bottom: 2rem;
 }
-
 img {
-	max-height: 100px;
+	max-height: 140px;
 }
-
 table {
 	text-align: center;
+}
+.nutri_nova {
+	display: flex;
+	justify-content: space-around;
+	margin: auto;
+	flex-direction: row;
+	height: 70px;
+}
+.mon_image {
+	display: flex;
+	justify-content: center;
+	margin: auto
 }
