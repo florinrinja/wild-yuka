@@ -11,7 +11,7 @@ const ScanBut = () => {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fffaf2'
+    backgroundColor: '#fffff',
   };
 
   const styleChild = {

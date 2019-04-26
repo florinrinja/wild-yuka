@@ -20,8 +20,7 @@ class ImportData extends Component {
       protein: '',
       sodium: '',
       salt: '',
-      additives:'',
-      vitamins:'',
+      additives:[],
     }
     this.getData();
   }
@@ -44,7 +43,6 @@ getData = () => {
         sodium: response.product.nutriments.sodium,
         salt: response.product.nutriments.salt,
         additives: response.product.additives_tags,
-        vitamins: response.product.vitamins_tags,
       });
     });
 }
@@ -101,8 +99,6 @@ let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/S
         fat={this.state.fat}
         saturatedFat={this.state.saturatedFat}
         protein={this.state.protein}
-        fat={this.state.fat}
-        saturatedFat={this.state.saturatedFat}
         salt={this.state.salt}
         sodium={this.state.sodium.toFixed(2)}
         additives={this.state.additives}

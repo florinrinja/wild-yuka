@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Modal, Button, Table, Row, Col } from 'react-materialize';
 import './ModalProduct.css';
-import Context from "../../context/Context"
 
 class ModalProduct extends Component {
   constructor(props) {
@@ -19,21 +18,18 @@ class ModalProduct extends Component {
           header={<h4>{this.props.name}</h4>}
           open
         >
-          <Row>
+          <Row className="container">
             <Col s={2} m={2} l={2} xl={2}>
-          <img src={this.props.image} alt=''/>
-          </Col>
-
-          <Col s={2} m={2} l={2} xl={2}>
-            <img src={this.props.nutriscore} alt=''/>
-          </Col>
-
-          <Col s={2} m={2} l={2} xl={2}>
-            <img src={this.props.novaGroup} alt=''/>
-          </Col>
+              <img src={this.props.image} alt='' />
+            </Col>
+            <Col s={2} m={2} l={2} xl={2}>
+              <img src={this.props.nutriscore} alt='' />
+            </Col>
+            <Col s={2} m={2} l={2} xl={2}>
+              <img src={this.props.novaGroup} alt='' />
+            </Col>
           </Row>
-
-          <Table class="striped responsive-table">
+          <Table class="striped">
             <thead>
               <tr>
                 <th>
@@ -61,22 +57,22 @@ class ModalProduct extends Component {
                   {this.props.carbohydrates}
                 </td>
               </tr>
-                <tr>
-                  <td>
-                    Sucres :
+              <tr>
+                <td>
+                  Sucres :
                   </td>
-                  <td>
-                    {this.props.sugar}
+                <td>
+                  {this.props.sugar}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Lipides :
                   </td>
-                </tr>
-                <tr>
-                  <td>
-                    Lipides :
-                  </td>
-                  <td>
-                    {this.props.fat}
-                  </td>
-                </tr>
+                <td>
+                  {this.props.fat}
+                </td>
+              </tr>
               <tr>
                 <td>
                   Graisses saturées :
@@ -101,7 +97,6 @@ class ModalProduct extends Component {
                   {this.props.saturatedFat}
                 </td>
               </tr>
-
               <tr>
                 <td>
                   Protéines :
@@ -126,21 +121,21 @@ class ModalProduct extends Component {
                   {this.props.salt}
                 </td>
               </tr>
+            </tbody>
+          </Table>
+          <Table class="striped">
+            <tbody> 
               <tr>
-                <td>
-                  Additifs :
-                </td>
-                <td>
-                  {this.props.additives}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Vitamines :
-                </td>
-                <td>
-                  {this.props.vitamins}
-                </td>
+              <td>
+                Additifs :
+              </td>
+              <td>
+                <p>{this.props.additives[0]? this.props.additives[0]:'N/A'}</p>
+                <p>{this.props.additives[1]? this.props.additives[1]:''}</p>
+                <p>{this.props.additives[2]? this.props.additives[2]:''}</p>
+                <p>{this.props.additives[3]? this.props.additives[3]:''}</p>
+                <p>{this.props.additives[4]? this.props.additives[4]:''}</p>
+              </td>
               </tr>
             </tbody>
           </Table>

@@ -1,7 +1,6 @@
 .drawingBuffer {
 	display: none;
 }
-
 #scanContainer {
 	overflow-x: hidden;
 	overflow-y: hidden;
@@ -9,6 +8,7 @@
 	justify-content: center;
 	height: 100%;
 	width: 100%;
+	background-color: #ffffff,
 }
 #pointer {
 	display: flex;
@@ -16,7 +16,7 @@
 	align-self: center;
 	position: absolute;
 	z-index: 4;
-	border: 1px solid yellow;
+	border: 1.5px solid #ffff44;
 	height: 40%;
 	width: 80%;
 	max-width: 540px;

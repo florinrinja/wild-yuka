@@ -42,8 +42,8 @@ const Logo = () => {
         y="82%"
         textAnchor="middle"
         fill="#6FCF97"
-        fontSize="1.5rem"
-        fontFamily="Arial"
+        fontSize="2rem"
+        fontFamily="Muli"
         dy=".3em"
         fontWeight="bold"
       // textshadow={textShadow}

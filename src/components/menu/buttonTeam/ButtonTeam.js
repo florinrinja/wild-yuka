@@ -1,27 +1,58 @@
 import React from 'react';
-import { Button, Modal, Switch } from 'react-materialize';
+import { Button, Modal, Card, Row, Col, CardTitle } from 'react-materialize';
+import './ButtonTeam.css';
 
 const ButtonTeam = () => {
   return (
-    <Modal header="Meet the team" trigger={<Button id='Team'
+    <Modal 
+      actions={
+      <Button waves="yellow" modal="close" flat>Fermer</Button>
+      }
+      header="Meet the team" 
+      trigger={<Button id='Team'
       floating
       large
       className="yellow accent-2"
       // fab={{ direction: 'left' }}
-      icon="help"
+      icon="info"
       waves="light"
       style={{ left: '3%', bottom: '2%',position:'absolute' }}
     />}
     >
-      <p>Feature 1</p>
-      <Switch offLabel="Off" onLabel="On" />
-      <h4>Florin</h4>
-      <h4>Juliette</h4>
-      <h4>Rachel</h4>
-      <h4>Romain</h4>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-			</p>
+      <Row>
+        <Col m={6} s={12}>
+          <Card 
+          title="Florin"
+          header={< CardTitle />} actions={[<a/>]}>
+            <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267605/ScanEat/florin.png"
+              className="responsive-img" alt="Florin Rinja" />
+          </Card>
+        </Col>
+        <Col m={6} s={12}>
+          <Card 
+            title="Juliette"
+            header={<CardTitle />} actions={[<a />]}>
+            <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267604/ScanEat/juliette.png"
+            className="responsive-img" alt="Juliette Michaux" />
+          </Card>
+        </Col>
+      </Row>
+      <Row>
+        <Col m={6} s={12}>
+          <Card header={<CardTitle />} actions={[<a />]} >
+            <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267609/ScanEat/rachel.png"
+              alt="Rachel O.S" />
+            Rachel
+          </Card>
+        </Col>
+        <Col m={6} s={12}>
+          <Card header={<CardTitle />} actions={[<a />]}>
+            <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267616/ScanEat/romain.jpg"
+              className="responsive-img" alt="Romain Dailly" />
+            Romain
+          </Card>
+        </Col>
+      </Row>    
     </Modal>
   )
 }

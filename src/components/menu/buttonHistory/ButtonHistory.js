@@ -9,7 +9,7 @@ const ButtonHistory = () => {
       floating
       large
       className="yellow accent-2"
-      icon="menu"
+      icon="history"
       waves="light"
       style={{ right: '3%',bottom: '2%', position:'absolute' }}
     />}

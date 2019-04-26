@@ -14,7 +14,7 @@ export default class Scan extends Component {
     this.state = {
       code: '',
       popup: false,
-      isScan: false
+      isScan: false,
     }
   }
 
@@ -54,7 +54,7 @@ export default class Scan extends Component {
           },
           multiple: false
         },
-        locate: false,
+        locate: true,
       },
       function (err) {
         if (err) {
