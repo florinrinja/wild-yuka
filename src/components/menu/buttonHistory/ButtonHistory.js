@@ -7,7 +7,7 @@ export default class ButtonHistory extends Component {
 
   render() {
     return (
-      <Modal header="Your History"
+      <Modal header="Mon historique"
         trigger={<Button id='History'
           floating
           large

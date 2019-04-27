@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Button, Table } from 'react-materialize';
+import { Modal, Button, Table, Collapsible, CollapsibleItem } from 'react-materialize';
 import './ModalProduct.css';
 
 class ModalProduct extends Component {
@@ -103,6 +103,17 @@ class ModalProduct extends Component {
             <img src={this.props.nutriscore} alt='Nutriscore' />
             <img src={this.props.novaGroup} alt='NovaGroup' style={{maxHeight:70}}/>
           </div> 
+          <Collapsible>
+            <CollapsibleItem header="Macronutriments" icon="restaurant" expanded>
+            Better safe than sorry. That's my motto.
+            </CollapsibleItem>
+            <CollapsibleItem header="Si tu savais..." icon="local-dining" >
+            Yeah, you do seem to have a little 'shit creek' action going.
+            </CollapsibleItem>
+            <CollapsibleItem header="Et là c'est le drame..." icon="report_problem">
+            You know, FYI, you can buy a paddle. Did you not plan for this contingency?
+            </CollapsibleItem>
+          </Collapsible>
             <Table class="striped">
             <thead>
               <tr>

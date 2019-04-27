@@ -8,7 +8,7 @@ const ButtonTeam = () => {
       actions={
       <Button waves="yellow" modal="close" flat>Fermer</Button>
       }
-      header="Meet the team" 
+      header="L'équipe" 
       trigger={<Button id='Team'
       floating
       large
