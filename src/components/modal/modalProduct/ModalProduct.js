@@ -75,13 +75,13 @@ class ModalProduct extends Component {
     return (
       <div>
         <Modal
+          className=""
           actions={
             <Button waves="yellow" modal="close" flat>Fermer</Button>
           }
           header={
             <div>
               <h4><small>{this.props.name} </small></h4>
-              
               <a href="javascript:void(0);" 
                  onClick={this.state.isPresent?null:this.saveCode} 
                  className={this.state.isPresent? "btn-flat btn-save disabled" :"btn-floating btn-save"} >
@@ -94,7 +94,7 @@ class ModalProduct extends Component {
               </a>
             </div>
           }
-          open
+          open={true}
         >
           <div>
             <img src={this.props.image} className='mon_image' alt='ProductImage' />
@@ -208,7 +208,7 @@ class ModalProduct extends Component {
               </tr>
             </tbody>
           </Table>
-          <Table class="striped">
+          <Table className="striped">
             <tbody> 
               <tr>
               <td>
