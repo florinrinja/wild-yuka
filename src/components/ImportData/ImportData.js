@@ -21,6 +21,8 @@ class ImportData extends Component {
       sodium: '',
       salt: '',
       additives:[],
+      allergens:'',
+      fiber:'',
     }
     this.getData();
   }
@@ -43,6 +45,8 @@ getData = () => {
         sodium: response.product.nutriments.sodium,
         salt: response.product.nutriments.salt,
         additives: response.product.additives_tags,
+        fiber: response.product.nutriments.fiber_100g,
+        allergens: response.product.allergens_from_ingredients,
       });
   });
 }
@@ -69,16 +73,16 @@ let nutriLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/
   
 getNovaLogo = () => {
 let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/ScanEat/Logo_NOVAgroup_NA.png';
-  if (this.state.novaGroup === 1) {
+  if (this.state.novaGroup === 1 || this.state.novaGroup === "1" ) {
     novaLogo = 'https://upload.wikimedia.org/wikipedia/commons/5/54/NOVA_group_1.svg' ;
   }
-  else if (this.state.novaGroup === 2) {
+  else if (this.state.novaGroup === 2 || this.state.novaGroup === "2" ) {
     novaLogo = 'https://upload.wikimedia.org/wikipedia/commons/a/ac/NOVA_group_2.svg';
   }
-  else if (this.state.novaGroup === 3) {
+  else if (this.state.novaGroup === 3 || this.state.novaGroup === "3" ) {
     novaLogo = 'https://upload.wikimedia.org/wikipedia/commons/2/26/NOVA_group_3.svg';
   }
-  else if (this.state.novaGroup === 4) {
+  else if (this.state.novaGroup === 4 || this.state.novaGroup === "4" ) {
     novaLogo = 'https://upload.wikimedia.org/wikipedia/commons/d/d3/NOVA_group_4.svg'
   } 
   return novaLogo;
@@ -106,6 +110,8 @@ let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/S
         salt={this.state.salt}
         sodium={this.state.sodium.toFixed(2)}
         additives={this.state.additives}
+        allergens= {this.state.allergens}
+        fiber={this.state.fiber}
         /> 
         : null}
       </div>
