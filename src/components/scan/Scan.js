@@ -72,8 +72,6 @@ export default class Scan extends Component {
     Quagga.offDetected(this._onDetected);
   }
   _onDetected = (data) => {
-    //limit wrong code detection (no us origin) with first number
-    if (data.codeResult.code[0] >= 3) {
       //callback with fetch to see if result is a valid code
       fetch(`https://fr.openfoodfacts.org/api/v0/produit/${data.codeResult.code}.json`)
         .then(response => response.json())
@@ -91,7 +89,6 @@ export default class Scan extends Component {
             Quagga.start()
           }, 5000)
         })
-    }
   }
 
   render() {
