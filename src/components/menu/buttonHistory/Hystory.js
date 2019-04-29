@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-// import SwipeToDelete from 'react-swipe-to-delete-component';
 import './ButtonHistory.css';
-// import { stat } from 'fs';
 import image from '../../home/images/download.png';
 
 const openFood = 'https://fr.openfoodfacts.org/api/v0/produit/';
@@ -30,7 +28,6 @@ class Hystory extends Component {
         array: arr
       })
     }
-
     arr.map((item, index) =>
       this.getFood(item, index)
     )
@@ -55,7 +52,6 @@ class Hystory extends Component {
   //     // }
   //   }
   // }
-
 
   // componentWillUpdate(nextProps, nextState) {
   //   localStorage.setItem('myCodes', JSON.stringify(nextState.array));
@@ -88,10 +84,8 @@ class Hystory extends Component {
   }
 
   deleteCode = (index) => {
-
     let previousArr = this.state.array;
     previousArr.splice(index, 1);
-
     localStorage.setItem('myCodes', JSON.stringify(previousArr));
     this.setState({ array: previousArr })
   }
