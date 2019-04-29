@@ -1,6 +1,7 @@
 .drawingBuffer {
 	display: none;
 }
+
 #scanContainer {
 	overflow-x: hidden;
 	overflow-y: hidden;
@@ -10,6 +11,7 @@
 	width: 100%;
 	background-color: #ffffff,
 }
+
 #pointer {
 	display: flex;
 	justify-content: center;
@@ -21,6 +23,7 @@
 	width: 80%;
 	max-width: 540px;
 }
+
 .logo {
 	position: absolute;
 	height: 60px;
@@ -29,12 +32,11 @@
 	margin-top: 4%;
 }
 
-
 #interactive{
-    display:flex;
-    justify-content:center;
+	display:flex;
+	justify-content:center;
 }
 
 .history{
-    display: none !important;
+	display: none !important;
 }
