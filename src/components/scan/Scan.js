@@ -89,7 +89,6 @@ export default class Scan extends Component {
           }, 5000)
         });
     }
-  }
 
   render() {
     return (
