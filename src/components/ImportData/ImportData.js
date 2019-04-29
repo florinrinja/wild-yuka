@@ -159,6 +159,7 @@ getScanEatNote = () => {
         nutriscore={this.getNutriLogo()}
         novaGroup={this.getNovaLogo()}
         scanEatBadge={this.getScanEatBadge()}
+        scanEatNote={this.getScanEatNote()}
         energy={this.state.energy}
         carbohydrates={this.state.carbohydrates} 
         sugar={this.state.sugar}
