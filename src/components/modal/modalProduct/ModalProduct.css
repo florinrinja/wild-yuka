@@ -25,3 +25,7 @@ table {
 .btn-save {
 	margin-right: 5px;
 }
+
+.modal .modal-header {
+	background-color: aqua;
+}

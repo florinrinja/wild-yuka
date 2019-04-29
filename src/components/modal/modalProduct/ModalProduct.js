@@ -13,7 +13,6 @@ class ModalProduct extends Component {
 
   componentDidMount() {
     let code = this.props.result;
-    // console.log(code)
     let nums = localStorage.getItem('myCodes');
     let arr = [];
     if (nums) {
@@ -28,6 +27,7 @@ class ModalProduct extends Component {
         })
       }
     }
+
   }
 
   saveCode = (ev) => {
@@ -48,6 +48,8 @@ class ModalProduct extends Component {
       codes: _codes,
       isPresent: true
     })
+    this.forceUpdate();
+
   }
 
   deleteCode = (ev) => {
@@ -69,7 +71,12 @@ class ModalProduct extends Component {
       codes: _codes,
       isPresent: false
     })
+    this.forceUpdate();
   }
+
+  // refreshPage() {
+  //   window.location.reload();
+  // }
 
   render() {
     return (
@@ -77,26 +84,26 @@ class ModalProduct extends Component {
         <Modal
           className=""
           actions={
-            <Button waves="yellow" modal="close" flat>Fermer</Button>
+            <Button waves="yellow" modal="close" flat /*onClick={() => this.refreshPage()}*/>Fermer</Button>
           }
           header={
             <div>
-              <h4><small>{this.props.name} </small></h4>
+              <h4><small>{this.props.name}</small></h4>
               <a href="javascript:void(0);"
                 onClick={this.state.isPresent ? null : this.saveCode}
                 className={this.state.isPresent ? "btn-flat btn-save disabled" : "btn-floating btn-save"} >
                 <i className="material-icons">save</i>
               </a>
-              <a href="javascript:void(0)" 
-                 onClick={this.state.isPresent?this.deleteCode:null} 
-                 className={this.state.isPresent?"btn-floating btn-remove red":"btn-flat btn-remove disabled"}>
+              <a href="javascript:void(0)"
+                onClick={this.state.isPresent ? this.deleteCode : null}
+                className={this.state.isPresent ? "btn-floating btn-remove red" : "btn-flat btn-remove disabled"}>
                 <i className="material-icons">delete</i>
               </a>
             </div>
           }
           open={true}
         >
-        
+
           <div>
             <img src={this.props.image} className='mon_image' alt='ProductImage' />
           </div>
@@ -218,8 +225,8 @@ class ModalProduct extends Component {
               </Table>
             </CollapsibleItem>
           </Collapsible>
-          
-           {/* <Table class="striped">
+
+          {/* <Table class="striped">
             <thead>
               <tr>
                 <th>

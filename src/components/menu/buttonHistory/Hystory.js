@@ -1,99 +1,53 @@
-import React, { Component } from 'react';
-// import SwipeToDelete from 'react-swipe-to-delete-component';
+import React, { Component, useState } from 'react';
+import { Row, Col } from 'react-materialize';
 import './ButtonHistory.css';
-// import { stat } from 'fs';
 import image from '../../home/images/download.png';
+import CountCtx from '../buttonHistory/ButtonHistory';
 
+
+// const [storage, setStorage] = useState(CountCtx);
 const openFood = 'https://fr.openfoodfacts.org/api/v0/produit/';
 let url;
 
-class Hystory extends Component {
+export default class Hystory extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      array: [],
       isPresent: null,
-      image: [],
-      name: [],
-      product: '',
-      status: [],
-      verbose: []
+      products: []
     };
   }
 
-  componentWillMount() {
-    let nums = localStorage.getItem('myCodes');
-    let arr = [];
-    if (nums) {
-      arr = JSON.parse(nums);
-      this.setState({
-        array: arr
-      })
-    }
-
-    arr.map((item, index) =>
-      this.getFood(item, index)
-    )
+  componentDidMount() {
+    JSON.parse(localStorage.getItem('myCodes')).map((item) => this.getFood(item));
   }
 
-  // componentDidMount() {
-  //   // let codeBar = this.props.result;
-  //   // console.log(code)
-  //   let nums = localStorage.getItem('myCodes');
-  //   let arr = [];
-  //   if (nums) {
-  //     arr = JSON.parse(nums);
-
-  //     // if (arr.includes(codeBar)) {
-  //     //   this.setState({
-  //     //     isPresent: true
-  //     //   })
-  //     // } else {
-  //     //   this.setState({
-  //     //     isPresent: false
-  //     //   })
-  //     // }
-  //   }
-  // }
-
-
-  // componentWillUpdate(nextProps, nextState) {
-  //   localStorage.setItem('myCodes', JSON.stringify(nextState.array));
-  // }
-
-  getFood(item, index) {
-    url = `${openFood}${item}.json`;
-    fetch(url)
+  getFood(item) {
+    fetch(`${openFood}${item}.json`)
       .then(response => response.json())
       .then(response => {
-        // console.log(response)
-        let images = this.state.image;
-        images[index] = response.product.image_front_url;
-        let names = this.state.name;
-        names[index] = response.product.product_name;
-        let statuses = this.state.status;
-        statuses[index] = response.status;
-        let verboses = this.state.verbose;
-        verboses[index] = response.status_verbose;
         this.setState({
-          image: images,
-          name: names,
-          status: statuses,
-          verbose: verboses
+          products: [...this.state.products, {
+            image: response.product.image_front_url,
+            name: response.product.product_name,
+            status: response.status,
+            verbose: response.status_verbose
+          }]
         });
       })
       .catch(error => {
         console.log('failed')
       })
+      console.log(this.pro)
   }
 
   deleteCode = (index) => {
-
-    let previousArr = this.state.array;
+    let previousArr = JSON.parse(localStorage.getItem('myCodes'));
+    let previousProducts = this.state.products;
+    previousProducts.splice(index, 1);
     previousArr.splice(index, 1);
-
+    this.setState({ products: previousProducts })
     localStorage.setItem('myCodes', JSON.stringify(previousArr));
-    this.setState({ array: previousArr })
   }
 
   render() {
@@ -101,21 +55,25 @@ class Hystory extends Component {
     return (
 
       <div>
-        {this.state.array.map((item, index) =>
-          <div key={index}>
-            {this.state.status[index] === 1 ? this.state.name[index] : `${notFound}`}
-            <img src={this.state.status[index] === 1 ? this.state.image[index] : `${image}`} alt={this.state.name[index]} />
-            <a href="javascript:void(0)"
-              onClick={() => this.deleteCode(index)}
-              className={"btn-floating btn-remove"}>
-              <i className="material-icons">delete</i>
-            </a>
-            <hr></hr>
+        {this.state.products.map((product, index) =>
+          <div>
+            <Row key={index} className="product-line">
+              <Col m={6} s={6} className="image-div">
+                <img className="image-css" src={product.status === 1 ? product.image : `${image}`} alt={product.name} />
+              </Col>
+              <Col m={6} s={6} className="textBtn-div">
+                <h6><small>{product.status === 1 ? product.name : `${notFound}`}</small></h6>
+                <a href="javascript:void(0);"
+                  onClick={() => this.deleteCode(index)}
+                  className="btn-floating btn-remove btn-small">
+                  <i className="material-icons">delete</i>
+                </a>
+              </Col>
+            </Row>
+            <hr className="horizontal-line"></hr>
           </div>
         )}
       </div>
     )
   }
 }
-
-export default Hystory;
