@@ -87,16 +87,10 @@ class Hystory extends Component {
       })
   }
 
-  // onDelete = () => console.info('onDelete');
-  // onCancel = () => console.info('onCancel');
-  // onLeft = (...args) => console.info('onLeft', ...args);
-  // onRight = (...args) => console.info('onRight', ...args);
-
   deleteCode = (index) => {
 
     let previousArr = this.state.array;
     previousArr.splice(index, 1);
-    // console.log(previousArr);
 
     localStorage.setItem('myCodes', JSON.stringify(previousArr));
     this.setState({ array: previousArr })
