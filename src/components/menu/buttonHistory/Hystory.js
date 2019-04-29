@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './ButtonHistory.css';
-import image from '../../home/images/download.png';
+import image from '../../home/images/404.png';
 
 const openFood = 'https://fr.openfoodfacts.org/api/v0/produit/';
 let url;
