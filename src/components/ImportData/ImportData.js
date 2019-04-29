@@ -86,12 +86,13 @@ let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/S
 
   render() {
 
-  console.log(this.state.additives.map(x => `additif numero ${x}`));
+  // console.log(this.state.additives.map(x => `additif numero ${x}`));
 
     return (
       <div>
         {this.state.product_name !== '' ? 
-        < ModalProduct 
+        < ModalProduct className=""
+        result={this.props.result}
         name={this.state.product_name}
         image={this.state.image} 
         nutriscore={this.getNutriLogo()}
