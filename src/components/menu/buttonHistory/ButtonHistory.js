@@ -17,6 +17,9 @@ export default class ButtonHistory extends Component {
           waves="light"
           style={{ right: '3%', bottom: '2%', position: 'absolute' }}
         />}
+        actions={
+          <Button waves="yellow" modal="close" flat>Fermer</Button>
+        }
       >
         <Hystory />
       </Modal>
