@@ -38,7 +38,9 @@ const ButtonTeam = (props) => {
           </Card>
         </Col>
       </Row>
-      <Row>
+
+      <Row key={1}>
+
         <Col m={6} s={12}>
           <Card
             title="Rachel"
