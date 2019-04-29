@@ -1,42 +1,42 @@
 .drawingBuffer {
-	display: none;
+  display: none;
 }
 
 #scanContainer {
-	overflow-x: hidden;
-	overflow-y: hidden;
-	display: flex;
-	justify-content: center;
-	height: 100%;
-	width: 100%;
-	background-color: #ffffff,
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff,
 }
 
 #pointer {
-	display: flex;
-	justify-content: center;
-	align-self: center;
-	position: absolute;
-	z-index: 4;
-	border: 1.5px solid #ffff44;
-	height: 40%;
-	width: 80%;
-	max-width: 540px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  position: absolute;
+  z-index: 4;
+  border: 1.5px solid #ffff44;
+  height: 40%;
+  width: 80%;
+  max-width: 540px;
 }
 
 .logo {
-	position: absolute;
-	height: 60px;
-	width: 60px;
-	margin-left: 4%;
-	margin-top: 4%;
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  margin-left: 4%;
+  margin-top: 4%;
 }
 
 #interactive{
-	display:flex;
-	justify-content:center;
+  display:flex;
+  justify-content:center;
 }
 
 .history{
-	display: none !important;
+  display: none !important;
 }

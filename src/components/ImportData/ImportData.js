@@ -22,7 +22,7 @@ class ImportData extends Component {
       salt: '',
       additives:[],
       allergens:'',
-      fiber:'',
+      fiber:''
     }
     this.getData();
   }
@@ -46,7 +46,7 @@ getData = () => {
         salt: response.product.nutriments.salt,
         additives: response.product.additives_tags,
         fiber: response.product.nutriments.fiber_100g,
-        allergens: response.product.allergens_from_ingredients,
+        allergens: response.product.allergens_from_ingredients
       });
   });
 }
@@ -74,7 +74,7 @@ let nutriLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/
 getNovaLogo = () => {
 let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/ScanEat/Logo_NOVAgroup_NA.png';
   if (this.state.novaGroup === 1 || this.state.novaGroup === "1" ) {
-    novaLogo = 'https://upload.wikimedia.org/wikipedia/commons/5/54/NOVA_group_1.svg' ;
+    novaLogo = 'https://upload.wikimedia.org/wikipedia/commons/5/54/NOVA_group_1.svg';
   }
   else if (this.state.novaGroup === 2 || this.state.novaGroup === "2" ) {
     novaLogo = 'https://upload.wikimedia.org/wikipedia/commons/a/ac/NOVA_group_2.svg';
