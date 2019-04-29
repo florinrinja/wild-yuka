@@ -89,7 +89,7 @@ class ModalProduct extends Component {
               </a>
               <a href="javascript:void(0)" 
                  onClick={this.state.isPresent?this.deleteCode:null} 
-                 className={this.state.isPresent?"btn-floating btn-remove":"btn-flat btn-remove disabled"}>
+                 className={this.state.isPresent?"btn-floating btn-remove red":"btn-flat btn-remove disabled"}>
                 <i className="material-icons">delete</i>
               </a>
             </div>

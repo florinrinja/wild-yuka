@@ -25,7 +25,7 @@ const ScanBut = () => {
 
   return (
     <div style={styleParent}>
-      <Link to="/Scan" exact>
+      <Link to="/Scan">
       <Button className="yellow accent-2"
         style={styleChild}
         onClick={() => getScan(!scanner)}>

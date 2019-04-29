@@ -25,7 +25,7 @@ const ButtonTeam = (props) => {
         <Col m={6} s={12}>
           <Card 
           title="Florin"
-          actions={[<a href="https://github.com/florinrinja" target='_blank'> Github</a>]}>
+          actions={[<a href="https://github.com/florinrinja" target='_blank'rel="noopener noreferrer"> Github</a>]}>
             <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267605/ScanEat/florin.png"
             className="responsive-img" alt="Florin Rinja" />
           </Card>
@@ -34,7 +34,7 @@ const ButtonTeam = (props) => {
         <Col m={6} s={12}>
           <Card 
             title="Juliette"
-            actions={[<a href="https://github.com/juliettemichaux" target='_blank'> Github</a>]}>
+            actions={[<a href="https://github.com/juliettemichaux" target='_blank' rel="noopener noreferrer"> Github</a>]}>
             <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267604/ScanEat/juliette.png"
               className="responsive-img" alt="Juliette Michaux" />
           </Card>
@@ -44,7 +44,7 @@ const ButtonTeam = (props) => {
         <Col m={6} s={12}>
           <Card
             title="Rachel"
-            actions={[<a href="https://github.com/rachel-os/" target='_blank'> Github</a>]} >
+            actions={[<a href="https://github.com/rachel-os/" target='_blank'rel="noopener noreferrer"> Github</a>]} >
             <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556280898/ScanEat/rachel.png" className="responsive-img"
               alt="Rachel O.S" />
           </Card>
@@ -53,7 +53,7 @@ const ButtonTeam = (props) => {
         <Col m={6} s={12}>
           <Card
             title="Romain"
-            actions={[<a href="https://github.com/romain-dailly" target='_blank'>Github</a>]}>
+            actions={[<a href="https://github.com/romain-dailly" target='_blank'rel="noopener noreferrer">Github</a>]}>
             <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267616/ScanEat/romain.jpg"
               className="responsive-img" alt="Romain Dailly" />
           </Card>
