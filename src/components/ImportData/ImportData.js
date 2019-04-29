@@ -10,7 +10,8 @@ class ImportData extends Component {
     this.state = {
       product_name: '',
       image: '',
-      nutriscore :'',  
+      nutriscore :'',
+      country:'',  
       novaGroup:'',
       energy: '',
       carbohydrates: '',
@@ -24,6 +25,7 @@ class ImportData extends Component {
       allergens:'',
       fiber:''
     }
+    this.nutriscoreLetter='';
     this.getData();
   }
 
@@ -31,10 +33,12 @@ getData = () => {
   fetch(`${openFood}${this.props.result}.json`)
     .then(response => response.json())
     .then(response => {
+      console.log(response)
         this.setState({
         product_name: response.product.product_name,
         image: response.product.image_front_url,
         nutriscore: response.product.nutriments['nutrition-score-fr'],
+        country: response.product.countries,
         novaGroup : response.product.nutriments['nova-group'],
         energy: response.product.nutriments.energy_value,
         carbohydrates: response.product.nutriments.carbohydrates,
@@ -53,40 +57,91 @@ getData = () => {
 
 getNutriLogo = () => {
 let nutriLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/ScanEat/Logo_Nutriscore_NA.png';
-  if (this.state.nutriscore <= -1) {
+let nutriscore = parseInt(this.state.nutriscore,10);
+  if (nutriscore <= -1) {
       nutriLogo = "https://upload.wikimedia.org/wikipedia/commons/7/7d/Nutri-score-A.svg";
+      this.nutriscoreLetter="a";
     }
-    else if (this.state.nutriscore >= 0 && this.state.nutriscore <= 2) {
+    else if (nutriscore >= 0 && nutriscore <= 2) {
       nutriLogo = "https://upload.wikimedia.org/wikipedia/commons/4/4e/Nutri-score-B.svg";
+      this.nutriscoreLetter="b";
     }
-    else if (this.state.nutriscore >= 3 && this.state.nutriscore <= 10) {
+    else if (nutriscore >= 3 && nutriscore <= 10) {
       nutriLogo = "https://upload.wikimedia.org/wikipedia/commons/b/b5/Nutri-score-C.svg";
+      this.nutriscoreLetter="c";
     }
-    else if (this.state.nutriscore >= 11 && this.state.nutriscore <= 18) {
-      nutriLogo = "https://commons.wikimedia.org/wiki/File:Nutri-score-D.svg";
+    else if (nutriscore >= 11 && nutriscore <= 18) {
+      nutriLogo = "https://upload.wikimedia.org/wikipedia/commons/d/d6/Nutri-score-D.svg";
+      this.nutriscoreLetter="d";
     }
-    else if (this.state.nutriscore >= 19) {
-      nutriLogo = "https://commons.wikimedia.org/wiki/File:Nutri-score-E.svg";
+    else if (nutriscore >= 19) {
+      nutriLogo = "https://upload.wikimedia.org/wikipedia/commons/8/8a/Nutri-score-E.svg";
+      this.nutriscoreLetter="e";
     }
     return nutriLogo;
   }
   
 getNovaLogo = () => {
 let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/ScanEat/Logo_NOVAgroup_NA.png';
-  if (this.state.novaGroup === 1 || this.state.novaGroup === "1" ) {
+let novaGroup = parseInt(this.state.novaGroup,10)
+  if (novaGroup === 1) {
     novaLogo = 'https://upload.wikimedia.org/wikipedia/commons/5/54/NOVA_group_1.svg';
   }
-  else if (this.state.novaGroup === 2 || this.state.novaGroup === "2" ) {
+  else if (novaGroup === 2) {
     novaLogo = 'https://upload.wikimedia.org/wikipedia/commons/a/ac/NOVA_group_2.svg';
   }
-  else if (this.state.novaGroup === 3 || this.state.novaGroup === "3" ) {
+  else if (novaGroup === 3) {
     novaLogo = 'https://upload.wikimedia.org/wikipedia/commons/2/26/NOVA_group_3.svg';
   }
-  else if (this.state.novaGroup === 4 || this.state.novaGroup === "4" ) {
+  else if (novaGroup === 4) {
     novaLogo = 'https://upload.wikimedia.org/wikipedia/commons/d/d3/NOVA_group_4.svg'
   } 
   return novaLogo;
 }
+
+getScanEatNote = () => {
+  let note = 0;
+  let novaGroup = parseInt(this.state.novaGroup,10);
+  let country= this.state.country.toLowerCase();
+  if (this.nutriscoreLetter ==="a"){
+    note += 50;
+  } else if (this.nutriscoreLetter ==="b"){
+    note += 40;
+  } else if (this.nutriscoreLetter ==="c"){
+    note += 30;
+  } else if (this.nutriscoreLetter ==="d"){
+    note += 20;
+  } else if (this.nutriscoreLetter ==="e"){
+    note += 10;
+  } 
+  if (novaGroup === 1) {
+    note += 40;
+  } else if (novaGroup === 2){
+    note += 30;
+  } else if (novaGroup === 3){
+    note += 20;
+  } else if (novaGroup === 4){
+    note += 10;
+  } 
+  if (country === "france"){
+    note += 10
+  }
+  return note;
+} 
+  getScanEatBadge = () => {
+    let note= this.getScanEatNote();
+    let badge="";
+    if (note <= 25){
+      badge="../../home/images/4.svg"
+    } else if (note <= 50 && note >= 25){
+      badge="../../home/images/3.svg"
+    } else if (note <= 75 && note >= 50){
+      badge="../../home/images/2.svg"
+    } else if (note <= 100 && note >= 75){
+      badge="../../home/images/1.svg"
+    } 
+    return badge
+  }
 
   render() {
 
@@ -101,6 +156,7 @@ let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/S
         image={this.state.image} 
         nutriscore={this.getNutriLogo()}
         novaGroup={this.getNovaLogo()}
+        scanEatBadge={this.getScanEatBadge()}
         energy={this.state.energy}
         carbohydrates={this.state.carbohydrates} 
         sugar={this.state.sugar}
