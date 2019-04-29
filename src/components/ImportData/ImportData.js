@@ -33,6 +33,7 @@ getData = () => {
     .then(response => {
         this.setState({
         product_name: response.product.product_name,
+        brand: response.product.brands,
         image: response.product.image_front_url,
         nutriscore: response.product.nutriments['nutrition-score-fr'],
         novaGroup : response.product.nutriments['nova-group'],
@@ -97,7 +98,8 @@ let novaLogo = 'https://res.cloudinary.com/grainderiz/image/upload/v1556182917/S
         {this.state.product_name !== '' ? 
         < ModalProduct className=""
         result={this.props.result}
-        name={this.state.product_name}
+        name={this.state.product_name} 
+        brand={this.state.brand}
         image={this.state.image} 
         nutriscore={this.getNutriLogo()}
         novaGroup={this.getNovaLogo()}

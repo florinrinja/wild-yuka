@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-materialize';
-import Background from './images/scan.svg';
+import Background from './images/scan.png';
 import { Link } from 'react-router-dom';
 
 const ScanBut = () => {
@@ -15,8 +15,8 @@ const ScanBut = () => {
   };
 
   const styleChild = {
-    width: 140,
-    height: 70,
+    width: 160,
+    height: 75,
     backgroundImage: `url(${Background})`,
     backgroundPosition: 'justify',
     backgroundSize: 'cover',
@@ -26,7 +26,7 @@ const ScanBut = () => {
   return (
     <div style={styleParent}>
       <Link to="/Scan">
-      <Button className="yellow accent-2"
+      <Button className="yellow accent-2 pulse" 
         style={styleChild}
         onClick={() => getScan(!scanner)}>
       </Button>

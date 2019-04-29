@@ -16,12 +16,14 @@ table {
 	flex-direction: row;
 	height: 70px;
 }
-.mon_image {
+/* .mon_image {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	margin: auto
-}
+} */
 
 .btn-save {
 	margin-right: 5px;
+
 }
+

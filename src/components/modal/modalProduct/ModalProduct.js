@@ -75,34 +75,46 @@ class ModalProduct extends Component {
     return (
       <div>
         <Modal
-          className=""
+          className="container"
           actions={
             <Button waves="yellow" modal="close" flat>Fermer</Button>
           }
           header={
             <div>
-              <h4><small>{this.props.name} </small></h4>
-              <a href="javascript:void(0);"
-                onClick={this.state.isPresent ? null : this.saveCode}
-                className={this.state.isPresent ? "btn-flat btn-save disabled" : "btn-floating btn-save"} >
-                <i className="material-icons">save</i>
-              </a>
-              <a href="javascript:void(0)" 
-                 onClick={this.state.isPresent?this.deleteCode:null} 
-                 className={this.state.isPresent?"btn-floating btn-remove red":"btn-flat btn-remove disabled"}>
-                <i className="material-icons">delete</i>
-              </a>
+              <div className="row">
+                <div className="col">
+                  <img src={this.props.image} className='mon_image' alt='ProductImage' />
+                </div>
+                <div className="col">
+                  <h3><small>{this.props.name} - {this.props.brand} </small></h3>
+                </div>
+                <div className="col">
+                  <a href="javascript:void(0);"
+                    onClick={this.state.isPresent ? null : this.saveCode}
+                    className={this.state.isPresent ? "btn-flat btn-save disabled" : "btn-floating btn-save yellow"} >
+                    <i className="material-icons">favorite</i>
+                  </a>
+                  <a href="javascript:void(0)"
+                    onClick={this.state.isPresent ? this.deleteCode : null}
+                    className={this.state.isPresent ? "btn-floating btn-remove red" : "btn-flat btn-remove disabled"}>
+                    <i className="material-icons">delete</i>
+                  </a>
+                </div>
+              </div>
             </div>
           }
           open={true}
         >
-        
-          <div>
-            <img src={this.props.image} className='mon_image' alt='ProductImage' />
-          </div>
-          <div className='nutri_nova'>
-            <img src={this.props.nutriscore} alt='Nutriscore' />
-            <img src={this.props.novaGroup} alt='NovaGroup' style={{ maxHeight: 70 }} />
+          <div className="divider"></div>
+          <div className="section">
+            <div className="row">
+              <div className="col">
+                <img src={this.props.nutriscore} alt='Nutriscore logo' />
+              </div>
+              <div className="col">
+                <img src={this.props.novaGroup} alt='NovaGroup logo' style={{ maxHeight: 70 }} />
+              </div>
+            </div>
           </div>
           <Collapsible>
             <CollapsibleItem header="En bref..." icon="restaurant" expanded>
@@ -218,110 +230,6 @@ class ModalProduct extends Component {
               </Table>
             </CollapsibleItem>
           </Collapsible>
-          
-           {/* <Table class="striped">
-            <thead>
-              <tr>
-                <th>
-                  Informations nutritionnelles
-                </th>
-                <th>
-                  pour 100 g
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  Énergie :
-                </td>
-                <td>
-                  {this.props.energy}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Glucides :
-                </td>
-                <td>
-                  {this.props.carbohydrates}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Sucres :
-                  </td>
-                <td>
-                  {this.props.sugar}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Lipides :
-                  </td>
-                <td>
-                  {this.props.fat}
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  Lipides :
-                </td>
-                <td>
-                  {this.props.fat}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Graisses saturées :
-                </td>
-                <td>
-                  {this.props.saturatedFat}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Protéines :
-                </td>
-                <td>
-                  {this.props.protein}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Sodium :
-                </td>
-                <td>
-                  {this.props.sodium}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Sel :
-                </td>
-                <td>
-                  {this.props.salt}
-                </td>
-              </tr>
-            </tbody>
-          </Table>
-          <Table className="striped">
-            <tbody> 
-              <tr>
-              <td>
-                Additifs :{this.props.additifs}
-              </td>
-              <td>
-                {/* <p>{this.props.additives[0]? this.props.additives[0]:'N/A'}</p>
-                <p>{this.props.additives[1]? this.props.additives[1]:''}</p>
-                <p>{this.props.additives[2]? this.props.additives[2]:''}</p>
-                <p>{this.props.additives[3]? this.props.additives[3]:''}</p>
-                <p>{this.props.additives[4]? this.props.additives[4]:''}</p>
-              </td>
-              </tr>
-            </tbody>
-          </Table> */}
         </Modal>
       </div>
     )
