@@ -80,26 +80,24 @@ class ModalProduct extends Component {
             <Button waves="yellow" modal="close" flat>Fermer</Button>
           }
           header={
-            <div>
-              <div className="row">
-                <div className="col">
-                  <img src={this.props.image} className='mon_image' alt='ProductImage' />
-                </div>
-                <div className="col">
-                  <h3><small>{this.props.name} - {this.props.brand} </small></h3>
-                </div>
-                <div className="col">
-                  <a href="javascript:void(0);"
-                    onClick={this.state.isPresent ? null : this.saveCode}
-                    className={this.state.isPresent ? "btn-flat btn-save disabled" : "btn-floating btn-save yellow"} >
-                    <i className="material-icons">favorite</i>
-                  </a>
-                  <a href="javascript:void(0)"
-                    onClick={this.state.isPresent ? this.deleteCode : null}
-                    className={this.state.isPresent ? "btn-floating btn-remove red" : "btn-flat btn-remove disabled"}>
-                    <i className="material-icons">delete</i>
-                  </a>
-                </div>
+            <div className="row">
+              <div className="col s4">
+                <img src={this.props.image} className='mon_image' alt='ProductImage' />
+              </div>
+              <div className="col s4">
+                <h3><small>{this.props.name} - {this.props.brand} </small></h3>
+              </div>
+              <div className="col s2 right-align">
+                <a href="javascript:void(0);"
+                  onClick={this.state.isPresent ? null : this.saveCode}
+                  className={this.state.isPresent ? "btn-flat btn-save disabled" : "btn-floating btn-save yellow"} >
+                  <i className="material-icons">favorite</i>
+                </a>
+                <a href="javascript:void(0)"
+                  onClick={this.state.isPresent ? this.deleteCode : null}
+                  className={this.state.isPresent ? "btn-floating btn-remove red" : "btn-flat btn-remove disabled"}>
+                  <i className="material-icons">delete</i>
+                </a>
               </div>
             </div>
           }
@@ -107,11 +105,11 @@ class ModalProduct extends Component {
         >
           <div className="divider"></div>
           <div className="section">
-            <div className="row">
-              <div className="col">
+            <div className="row center-align">
+              <div className="col s6">
                 <img src={this.props.nutriscore} alt='Nutriscore logo' />
               </div>
-              <div className="col">
+              <div className="col s6">
                 <img src={this.props.novaGroup} alt='NovaGroup logo' style={{ maxHeight: 70 }} />
               </div>
             </div>
