@@ -9,8 +9,8 @@ class ModalProduct extends Component {
       codes: [],
       isPresent: null
     }
+    console.log(this.props.scanEatBadge)
   }
-
   componentDidMount() {
     let code = this.props.result;
     // console.log(code)
