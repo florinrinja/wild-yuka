@@ -2,7 +2,6 @@ import React from 'react';
 import { Button, Modal, Card, Row, Col } from 'react-materialize';
 import './ButtonTeam.css';
 
-
 const ButtonTeam = (props) => {
 
   return (
@@ -10,7 +9,7 @@ const ButtonTeam = (props) => {
       actions={
         <Button waves="yellow" modal="close" flat>Fermer</Button>
       }
-      header="Meet the team"
+      header="L'équipe" 
       trigger={<Button id='Team'
         floating
         large
@@ -29,7 +28,6 @@ const ButtonTeam = (props) => {
             <img src="https://res.cloudinary.com/grainderiz/image/upload/v1556267605/ScanEat/florin.png"
             className="responsive-img" alt="Florin Rinja" />
           </Card>
-          
         </Col>
         <Col m={6} s={12}>
           <Card 
@@ -51,7 +49,6 @@ const ButtonTeam = (props) => {
               alt="Rachel O.S" />
           </Card>
         </Col>
-
         <Col m={6} s={12}>
           <Card
             title="Romain"
@@ -61,7 +58,6 @@ const ButtonTeam = (props) => {
           </Card>
         </Col>
       </Row>
-
     </Modal>
   )
 }

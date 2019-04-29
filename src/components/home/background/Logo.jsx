@@ -44,7 +44,7 @@ const Logo = () => {
         fill="#6FCF97"
         fontSize="2rem"
         fontFamily="Muli"
-        dy=".3em"
+        dy=".2em"
         fontWeight="bold"
       // textshadow={textShadow}
       >
