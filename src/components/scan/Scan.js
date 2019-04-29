@@ -10,14 +10,13 @@ import SmallLogo from '../home/images/untitled.svg';
 // import Context from '../context/Context';
 import Hystory from '../menu/buttonHistory/Hystory';
 
-
 export default class Scan extends Component {
   constructor(props) {
     super(props);
     this.state = {
       code: '',
       popup: false,
-      isScan: false,
+      isScan: false
     }
   }
   componentDidMount() {
@@ -31,7 +30,7 @@ export default class Scan extends Component {
           constraints: {
             maxHeight: window.innerHeight,
             maxWitdh: window.innerWidth,
-            facingMode: 'environment', // or user
+            facingMode: 'environment'// or user
           },
         },
         locator: {
@@ -72,30 +71,27 @@ export default class Scan extends Component {
     Quagga.offDetected(this._onDetected);
   }
   _onDetected = (data) => {
-    //limit wrong code detection (no us origin) with first number
-    if (data.codeResult.code[0] >= 3) {
       //callback with fetch to see if result is a valid code
       fetch(`https://fr.openfoodfacts.org/api/v0/produit/${data.codeResult.code}.json`)
         .then(response => response.json())
         .then(response => {
           if (response.status === 1 && !this.state.isScan) {
             this.setState({ isScan: true, code: data.codeResult.code });
-            Quagga.pause()
+            Quagga.pause();
           } else if (this.state.isScan && response.status === 1) {
             this.setState({ code: data.codeResult.code, isScan: false }, () => {
-              this.setState({ isScan: true })
-              Quagga.pause()
+              this.setState({ isScan: true });
+              Quagga.pause();
             })
           }
           setTimeout(() => {
-            Quagga.start()
+            Quagga.start();
           }, 5000)
-        })
+        });
     }
   }
 
   render() {
-
     return (
       <div style={{ Height: window.innerHeight, witdh: window.innerWidth }}>
         {this.state.popup ? <Link to="/" exact><PopupCam /></Link> :

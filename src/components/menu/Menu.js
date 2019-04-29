@@ -8,12 +8,12 @@ const Menu = () => {
     // height: (window.innerHeight - (window.innerHeight * 0.7) - 74.98),
   };
 
-	return (
-		<div style={style}>
-			<ButtonTeam />
-			<ButtonHistory />
-		</div>
-	)
+  return (
+    <div style={style}>
+      <ButtonTeam />
+      <ButtonHistory />
+    </div>
+  )
 }
 
 export default Menu; 
