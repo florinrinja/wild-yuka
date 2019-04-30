@@ -13,7 +13,6 @@ class ModalProduct extends Component {
   }
   componentDidMount() {
     let code = this.props.result;
-    // console.log(code)
     let nums = localStorage.getItem('myCodes');
     let arr = [];
     if (nums) {
@@ -28,6 +27,7 @@ class ModalProduct extends Component {
         })
       }
     }
+
   }
 
   saveCode = (ev) => {
@@ -48,6 +48,8 @@ class ModalProduct extends Component {
       codes: _codes,
       isPresent: true
     })
+    this.forceUpdate();
+
   }
 
   deleteCode = (ev) => {
@@ -69,7 +71,12 @@ class ModalProduct extends Component {
       codes: _codes,
       isPresent: false
     })
+    this.forceUpdate();
   }
+
+  // refreshPage() {
+  //   window.location.reload();
+  // }
 
   render() {
     return (
@@ -77,7 +84,7 @@ class ModalProduct extends Component {
         <Modal
           className="container"
           actions={
-            <Button waves="yellow" modal="close" flat>Fermer</Button>
+            <Button waves="yellow" modal="close" flat /*onClick={() => this.refreshPage()}*/>Fermer</Button>
           }
           header={
             <div className="row">
@@ -107,9 +114,12 @@ class ModalProduct extends Component {
           <div className="section">
             <div className="row center-align">
               <div className="col s6">
-                <img src={this.props.nutriscore} alt='Nutriscore logo' />
+                <a href=C'
+                  <img src={this.props.nutriscore} alt='Nutriscore logo' />
+                </a>
               </div>
               <div className="col s6">
+
                 <img src={this.props.novaGroup} alt='NovaGroup logo' style={{ maxHeight: 70 }} />
               </div>
             </div>

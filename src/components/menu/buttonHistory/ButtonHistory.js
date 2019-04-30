@@ -1,12 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, createContext, useState } from 'react';
 import { Button, Modal } from 'react-materialize';
 import './ButtonHistory.css';
 import Hystory from './Hystory';
 
-export default class ButtonHistory extends Component {
+export const CountCtx = createContext([]);
 
-  render() {
-    return (
+const ButtonHistory = () => {
+  const [storage, setStorage] = useState(JSON.parse(localStorage.getItem('myCodes')));
+
+  return (
+    <CountCtx.Provider value={[storage, setStorage]}>
       <Modal header="Mon historique"
         trigger={<Button id='History'
           floating
@@ -18,11 +21,13 @@ export default class ButtonHistory extends Component {
           style={{ right: '3%', bottom: '2%', position: 'absolute' }}
         />}
         actions={
-          <Button waves="yellow" modal="close" flat>Fermer</Button>
+          <Button waves="yellow" modal="close" flat >Fermer</Button>
         }
       >
         <Hystory />
       </Modal>
-    )
-  }
+    </CountCtx.Provider>
+  )
 }
+
+export default ButtonHistory;
