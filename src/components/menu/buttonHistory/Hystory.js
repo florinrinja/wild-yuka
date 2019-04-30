@@ -1,13 +1,9 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import { Row, Col } from 'react-materialize';
 import './ButtonHistory.css';
 import image from '../../home/images/404.png';
-import CountCtx from '../buttonHistory/ButtonHistory';
 
-
-// const [storage, setStorage] = useState(CountCtx);
 const openFood = 'https://fr.openfoodfacts.org/api/v0/produit/';
-let url;
 
 export default class Hystory extends Component {
   constructor(props) {
@@ -24,10 +20,10 @@ export default class Hystory extends Component {
     if (_codes) {
       arr = JSON.parse(_codes);
       localStorage.setItem('myCodes', JSON.stringify(arr));
-    }else{
+    } else {
       arr = [];
       localStorage.setItem('myCodes', JSON.stringify(arr));
-    }      
+    }
     JSON.parse(localStorage.getItem('myCodes')).map((item) => this.getFood(item));
   }
 
@@ -47,7 +43,6 @@ export default class Hystory extends Component {
       .catch(error => {
         console.log('failed')
       })
-      console.log(this.pro)
   }
 
   deleteCode = (index) => {
@@ -65,7 +60,7 @@ export default class Hystory extends Component {
 
       <div>
         {this.state.products.map((product, index) =>
-          <div>
+          <div key={index}>
             <Row key={index} className="product-line">
               <Col m={6} s={6} className="image-div">
                 <img className="image-css" src={product.status === 1 ? product.image : `${image}`} alt={product.name} />
@@ -74,7 +69,7 @@ export default class Hystory extends Component {
                 <h6><small>{product.status === 1 ? product.name : `${notFound}`}</small></h6>
                 <a href="javascript:void(0);"
                   onClick={() => this.deleteCode(index)}
-                  className="btn-floating btn-remove btn-small">
+                  className="btn-floating btn-remove btn-small red">
                   <i className="material-icons">delete</i>
                 </a>
               </Col>
