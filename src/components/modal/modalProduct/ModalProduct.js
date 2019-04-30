@@ -12,6 +12,7 @@ class ModalProduct extends Component {
     this.badge =`${process.env.PUBLIC_URL}/assets/${this.props.scanEatBadge}.png`
     
   }
+
   componentDidMount() {
     let code = this.props.result;
     let nums = localStorage.getItem('myCodes');
@@ -28,7 +29,6 @@ class ModalProduct extends Component {
         })
       }
     }
-
   }
 
   saveCode = (ev) => {
@@ -49,8 +49,7 @@ class ModalProduct extends Component {
       codes: _codes,
       isPresent: true
     })
-    this.forceUpdate();
-
+    // this.forceUpdate();
   }
 
   deleteCode = (ev) => {
@@ -72,7 +71,7 @@ class ModalProduct extends Component {
       codes: _codes,
       isPresent: false
     })
-    this.forceUpdate();
+    // this.forceUpdate();
   }
 
   // refreshPage() {
