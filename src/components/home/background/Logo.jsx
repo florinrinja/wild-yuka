@@ -42,7 +42,7 @@ const Logo = () => {
         y="82%"
         textAnchor="middle"
         fill="#6FCF97"
-        fontSize="2rem"
+        fontSize="1.7rem"
         fontFamily="Muli"
         dy=".2em"
         fontWeight="bold"
