@@ -133,13 +133,13 @@ getScanEatNote = () => {
     let note= this.getScanEatNote();
     let badge="";
     if (note <= 25){
-      badge="../../home/images/4.svg"
+      badge=4
     } else if (note <= 50 && note >= 25){
-      badge="../../home/images/3.svg"
+      badge=3
     } else if (note <= 75 && note >= 50){
-      badge="../../home/images/2.svg"
+      badge=2
     } else if (note <= 100 && note >= 75){
-      badge="../../home/images/1.svg"
+      badge=1
     } 
     return badge
   }

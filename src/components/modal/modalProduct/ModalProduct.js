@@ -9,7 +9,8 @@ class ModalProduct extends Component {
       codes: [],
       isPresent: null
     }
-    console.log(this.props.scanEatBadge)
+    this.badge =`${process.env.PUBLIC_URL}/assets/${this.props.scanEatBadge}.png`
+    
   }
   componentDidMount() {
     let code = this.props.result;
@@ -81,7 +82,7 @@ class ModalProduct extends Component {
   render() {
     return (
       <div>
-        <Modal
+        <Modal endingTop="100%"
           className="container"
           actions={
             <Button waves="yellow" modal="close" flat /*onClick={() => this.refreshPage()}*/>Fermer</Button>
@@ -114,10 +115,18 @@ class ModalProduct extends Component {
           <div className="section">
             <div className="row center-align">
               <div className="col s6">
+                <h5 style={(this.props.scanEatNote < 50)? {color : 'red'} : {color :'green'}}>
+                {this.props.scanEatNote}/100
+                </h5>
+                <img className="badge" src={this.badge} alt ="badge"/>
+                <a href="https://www.santepubliquefrance.fr/Sante-publique-France/Nutri-Score" target="_blank" rel="noopener noreferrer">
                   <img src={this.props.nutriscore} alt='Nutriscore logo' />
+                </a>
               </div>
               <div className="col s6">
-                <img src={this.props.novaGroup} alt='NovaGroup logo' style={{ maxHeight: 70 }} />
+                <a href="https://fr.openfoodfacts.org/nova" target="_blank" rel="noopener noreferrer">
+                  <img src={this.props.novaGroup} alt='NovaGroup logo' style={{ maxHeight: 70 }} />
+                </a>
               </div>
             </div>
           </div>
