@@ -114,12 +114,9 @@ class ModalProduct extends Component {
           <div className="section">
             <div className="row center-align">
               <div className="col s6">
-                <a href=C'
                   <img src={this.props.nutriscore} alt='Nutriscore logo' />
-                </a>
               </div>
               <div className="col s6">
-
                 <img src={this.props.novaGroup} alt='NovaGroup logo' style={{ maxHeight: 70 }} />
               </div>
             </div>
