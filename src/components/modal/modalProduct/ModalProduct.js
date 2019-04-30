@@ -140,7 +140,7 @@ class ModalProduct extends Component {
                       Énergie :
                   </td>
                     <td>
-                      {this.props.energy}
+                      {this.props.energy} kcal
                     </td>
                   </tr>
                   <tr>
@@ -148,7 +148,7 @@ class ModalProduct extends Component {
                       Glucides :
                   </td>
                     <td>
-                      {this.props.carbohydrates}
+                      {this.props.carbohydrates} g
                     </td>
                   </tr>
                   <tr>
@@ -156,7 +156,7 @@ class ModalProduct extends Component {
                       Lipides :
                     </td>
                     <td>
-                      {this.props.fat}
+                      {this.props.fat} g
                     </td>
                   </tr>
                   <tr>
@@ -164,7 +164,7 @@ class ModalProduct extends Component {
                       Protéines :
                 </td>
                     <td>
-                      {this.props.protein}
+                      {this.props.protein} g
                     </td>
                   </tr>
                 </tbody>
@@ -178,7 +178,7 @@ class ModalProduct extends Component {
                       Fibres :
                     </td>
                     <td>
-                      {this.props.fiber ? this.props.fiber : 'N/A'}
+                      {this.props.fiber ? this.props.fiber : 'N/A'} 
                     </td>
                   </tr>
                   <tr>
@@ -186,7 +186,7 @@ class ModalProduct extends Component {
                       Graisses saturées :
                     </td>
                     <td>
-                      {this.props.saturatedFat ? this.props.saturatedFat : 'N/A'}
+                      {this.props.saturatedFat ? this.props.saturatedFat : 'N/A'} 
                     </td>
                   </tr>
                   <tr>
@@ -194,7 +194,7 @@ class ModalProduct extends Component {
                       Sodium :
                 </td>
                     <td>
-                      {this.props.sodium}
+                      {this.props.sodium} g
                     </td>
                   </tr>
                   <tr>
@@ -202,7 +202,7 @@ class ModalProduct extends Component {
                       Sel :
                 </td>
                     <td>
-                      {this.props.salt}
+                      {this.props.salt} g
                     </td>
                   </tr>
                 </tbody>
