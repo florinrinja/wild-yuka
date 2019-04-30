@@ -99,7 +99,7 @@ class ModalProduct extends Component {
                 <a href="javascript:void(0);"
                   onClick={this.state.isPresent ? null : this.saveCode}
                   className={this.state.isPresent ? "btn-flat btn-save disabled" : "btn-floating btn-save yellow"} >
-                  <i className="material-icons">favorite</i>
+                  <i className="material-icons">star</i>
                 </a>
                 <a href="javascript:void(0)"
                   onClick={this.state.isPresent ? this.deleteCode : null}
