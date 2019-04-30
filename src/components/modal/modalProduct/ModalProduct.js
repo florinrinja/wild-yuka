@@ -87,14 +87,8 @@ class ModalProduct extends Component {
             <Button waves="yellow" modal="close" flat /*onClick={() => this.refreshPage()}*/>Fermer</Button>
           }
           header={
-            <div className="row">
-              <div className="col s4">
-                <img src={this.props.image} className='mon_image' alt='ProductImage' />
-              </div>
-              <div className="col s4">
-                <h3><small>{this.props.name} - {this.props.brand} </small></h3>
-              </div>
-              <div className="col s2 right-align">
+            <div>
+               <div className="row right-align">
                 <a href="javascript:void(0);"
                   onClick={this.state.isPresent ? null : this.saveCode}
                   className={this.state.isPresent ? "btn-flat btn-save disabled" : "btn-floating btn-save yellow"} >
@@ -106,6 +100,13 @@ class ModalProduct extends Component {
                   <i className="material-icons">delete</i>
                 </a>
               </div>
+            <div className="row center-align">
+                <p><small>{this.props.name} - {this.props.brand} </small></p>
+              <div className="row center-align">
+                <img src={this.props.image} className='mon_image' alt='ProductImage' />
+              </div>
+             
+            </div>
             </div>
           }
           open={true}
