@@ -2,7 +2,6 @@ import React, { Component, useState } from 'react';
 import { Row, Col } from 'react-materialize';
 import './ButtonHistory.css';
 import image from '../../home/images/404.png';
-import CountCtx from '../buttonHistory/ButtonHistory';
 
 
 // const [storage, setStorage] = useState(CountCtx);
