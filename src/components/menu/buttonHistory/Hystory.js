@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import { Row, Col } from 'react-materialize';
 import './ButtonHistory.css';
-import image from '../../home/images/download.png';
+import image from '../../home/images/404.png';
 import CountCtx from '../buttonHistory/ButtonHistory';
 
 
@@ -19,6 +19,15 @@ export default class Hystory extends Component {
   }
 
   componentDidMount() {
+    let _codes = localStorage.getItem('myCodes');
+    let arr = [];
+    if (_codes) {
+      arr = JSON.parse(_codes);
+      localStorage.setItem('myCodes', JSON.stringify(arr));
+    }else{
+      arr = [];
+      localStorage.setItem('myCodes', JSON.stringify(arr));
+    }      
     JSON.parse(localStorage.getItem('myCodes')).map((item) => this.getFood(item));
   }
 
