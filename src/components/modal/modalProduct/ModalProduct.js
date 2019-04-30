@@ -113,12 +113,14 @@ class ModalProduct extends Component {
         >
           <div className="divider"></div>
           <div className="section">
+              <div class="row center-align">
+                <p style={(this.props.scanEatNote < 50)? {color : 'red'} : {color :'green'}}>
+                {this.props.scanEatNote}/100
+                </p>
+                <img className="badge" src={this.badge} alt ="badge"/>
+              </div>
             <div className="row center-align">
               <div className="col s6">
-                <h5 style={(this.props.scanEatNote < 50)? {color : 'red'} : {color :'green'}}>
-                {this.props.scanEatNote}/100
-                </h5>
-                <img className="badge" src={this.badge} alt ="badge"/>
                 <a href="https://www.santepubliquefrance.fr/Sante-publique-France/Nutri-Score" target="_blank" rel="noopener noreferrer">
                   <img src={this.props.nutriscore} alt='Nutriscore logo' />
                 </a>
