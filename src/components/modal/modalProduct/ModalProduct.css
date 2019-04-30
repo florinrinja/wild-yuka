@@ -21,6 +21,9 @@ table {
 
 .btn-save {
 	margin-right: 5px;
-
+}
+.badge {
+	max-height: 130px;
+  /* max-width: 60px; */
 }
 
